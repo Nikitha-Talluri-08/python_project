@@ -1,0 +1,17 @@
+<!-- visa_applications.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visa Applications</title>
+</head>
+<body>
+    <h1>Visa Applications</h1>
+    <ul>
+        {% for application in applications %}
+            <li>{{ application.user.username }} - {{ application.status }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

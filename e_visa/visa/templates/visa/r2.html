@@ -1,0 +1,307 @@
+{% extends "visa/home.html" %}
+
+{% block title %}
+  e-Visa Application
+{% endblock title %}
+
+{% block content %}
+
+ <br> <div class="container">
+
+    <form method="POST">
+      {% csrf_token %}
+
+<br><br><div class="container_2">
+       <div class="form-group">
+            <label for="passportType">Passport Type*</label>
+            <select id="passportType" name="passportType">
+                <option value="Passport Type">Passport Type</option>
+                <option value="Regular or Ordinary Passport">Regular or Ordinary Passport</option>
+                <option value="Diplomatic Passport">Diplomatic Passport</option>
+                <option value="Official Passport">Official Passport</option>
+                <option value="Special or Service Passport">Special or Service Passport</option>
+                <option value="Emergency Passport">Emergency Passport</option>
+                <option value="Child Passport">Child Passport</option>
+                <option value="Temporary Passport">Temporary Passport</option>
+                <option value="Biometric Passport">Biometric Passport</option>
+                <option value="Multiple-Entry Passport">Multiple-Entry Passport</option>
+                <option value="Immigrant Passport">Immigrant Passport</option>
+                <option value="Refugee Travel Passport">Refugee Passport</option>
+                <option value="Stateless Travel Passport">Stateless Passport</option>
+            </select><br><br>
+        </div>
+        <div class="form-group">
+            <label for="nationality">Nationality</label>
+            <select id="nationality" name="nationality">
+                <option value="------">------</option>
+                <option value="Afghan">Afghan</option>
+                <option value="Albanian">Albanian</option>
+                <option value="Algerian">Algerian</option>
+                <option value="American Samoan">American Samoan</option>
+                <option value="Andorran">Andorran</option>
+                <option value="Angolan">Angolan</option>
+                <option value="Antiguan or Barbudan">Antiguan or Barbudan</option>
+                <option value="Argentine">Argentine</option>
+                <option value="Armenian">Armenian</option>
+                <option value="Aruban">Aruban</option>
+                <option value="Australian">Australian</option>
+                <option value="Austrian">Austrian</option>
+                <option value="Azerbaijani">Azerbaijani</option>
+                <option value="Bahamian">Bahamian</option>
+                <option value="Bahraini">Bahraini</option>
+                <option value="Bangladeshi">Bangladeshi</option>
+                <option value="Barbadian">Barbadian</option>
+                <option value="Belarusian">Belarusian</option>
+                <option value="Belgian">Belgian</option>
+                <option value="Belizean">Belizean</option>
+                <option value="Beninese">Beninese</option>
+                <option value="Bermudian">Bermudian</option>
+                <option value="Bhutanese">Bhutanese</option>
+                <option value="Bolivian">Bolivian</option>
+                <option value="Bosnian or Herzegovinian">Bosnian or Herzegovinian</option>
+                <option value="Botswanan">Botswanan</option>
+                <option value="Brazilian">Brazilian</option>
+                <option value="British Virgin Islander">British Virgin Islander</option>
+                <option value="Bruneian">Bruneian</option>
+                <option value="Bulgarian">Bulgarian</option>
+                <option value="Burkinabe">Burkinabe</option>
+                <option value="Burundian">Burundian</option>
+                <option value="Cabo Verdean">Cabo Verdean</option>
+                <option value="Cambodian">Cambodian</option>
+                <option value="Cameroonian">Cameroonian</option>
+                <option value="Canadian">Canadian</option>
+                <option value="Caymanian">Caymanian</option>
+                <option value="Central African">Central African</option>
+                <option value="Chadian">Chadian</option>
+                <option value="Chilean">Chilean</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Colombian">Colombian</option>
+                <option value="Comorian">Comorian</option>
+                <option value="Congolese (Congo-Brazzaville)">Congolese (Congo-Brazzaville)</option>
+                <option value="Congolese (Democratic Republic of the Congo)">Congolese (Democratic Republic of the Congo)</option>
+                <option value="Cook Islander">Cook Islander</option>
+                <option value="Costa Rican">Costa Rican</option>
+                <option value="Croatian">Croatian</option>
+                <option value="Cuban">Cuban</option>
+                <option value="Curaçaoan">Curaçaoan</option>
+                <option value="Cypriot">Cypriot</option>
+                <option value="Czech">Czech</option>
+                <option value="Danish">Danish</option>
+                <option value="Djiboutian">Djiboutian</option>
+                <option value="Dominican">Dominican</option>
+                <option value="Dominican (Republic of the Dominican Republic)">Dominican (Republic of the Dominican Republic)</option>
+                <option value="Dutch">Dutch</option>
+                <option value="East Timorese">East Timorese</option>
+                <option value="Ecuadorean">Ecuadorean</option>
+                <option value="Egyptian">Egyptian</option>
+                <option value="Salvadoran">Salvadoran</option>
+                <option value="Equatorial Guinean">Equatorial Guinean</option>
+                <option value="Eritrean">Eritrean</option>
+                <option value="Estonian">Estonian</option>
+                <option value="Eswatini">Eswatini</option>
+                <option value="Ethiopian">Ethiopian</option>
+                <option value="Faroese">Faroese</option>
+                <option value="Fijian">Fijian</option>
+                <option value="Finnish">Finnish</option>
+                <option value="French">French</option>
+                <option value="French Polynesian">French Polynesian</option>
+                <option value="Gabonese">Gabonese</option>
+                <option value="Gambian">Gambian</option>
+                <option value="Georgian">Georgian</option>
+                <option value="German">German</option>
+                <option value="Ghanaian">Ghanaian</option>
+                <option value="Gibraltarian">Gibraltarian</option>
+                <option value="Greek">Greek</option>
+                <option value="Grenadian">Grenadian</option>
+                <option value="Guadeloupean">Guadeloupean</option>
+                <option value="Guatemalan">Guatemalan</option>
+                <option value="Guyanese">Guyanese</option>
+                <option value="Guinean">Guinean</option>
+                <option value="Guinea-Bissauan">Guinea-Bissauan</option>
+                <option value="Haitian">Haitian</option>
+                <option value="Honduran">Honduran</option>
+                <option value="Hong Konger">Hong Konger</option>
+                <option value="Hungarian">Hungarian</option>
+                <option value="Icelandic">Icelandic</option>
+                <option value="Indian">Indian</option>
+                <option value="Indonesian">Indonesian</option>
+                <option value="Iranian">Iranian</option>
+                <option value="Iraqi">Iraqi</option>
+                <option value="Irish">Irish</option>
+                <option value="Israeli">Israeli</option>
+                <option value="Italian">Italian</option>
+                <option value="Ivorian">Ivorian</option>
+                <option value="Jamaican">Jamaican</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Jordanian">Jordanian</option>
+                <option value="Kazakh">Kazakh</option>
+                <option value="Kenyan">Kenyan</option>
+                <option value="Kiribati">Kiribati</option>
+                <option value="Kosovar">Kosovar</option>
+                <option value="Kuwaiti">Kuwaiti</option>
+                <option value="Kyrgyz">Kyrgyz</option>
+                <option value="Laotian">Laotian</option>
+                <option value="Latvian">Latvian</option>
+                <option value="Lebanese">Lebanese</option>
+                <option value="Lesothoan">Lesothoan</option>
+                <option value="Liberian">Liberian</option>
+                <option value="Libyan">Libyan</option>
+                <option value="Liechtensteiner">Liechtensteiner</option>
+                <option value="Lithuanian">Lithuanian</option>
+                <option value="Luxembourgish">Luxembourgish</option>
+                <option value="Macanese">Macanese</option>
+                <option value="Malagasy">Malagasy</option>
+                <option value="Malawian">Malawian</option>
+                <option value="Malaysian">Malaysian</option>
+                <option value="Maldivian">Maldivian</option>
+                <option value="Malian">Malian</option>
+                <option value="Maltese">Maltese</option>
+                <option value="Manx">Manx</option>
+                <option value="Martiniquais">Martiniquais</option>
+                <option value="Mauritanian">Mauritanian</option>
+                <option value="Mauritian">Mauritian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Micronesian">Micronesian</option>
+                <option value="Moldovan">Moldovan</option>
+                <option value="Monégasque">Monégasque</option>
+                <option value="Mongolian">Mongolian</option>
+                <option value="Montenegrin">Montenegrin</option>
+                <option value="Moroccan">Moroccan</option>
+                <option value="Motswana">Motswana</option>
+                <option value="Mozambican">Mozambican</option>
+                <option value="Mosotho">Mosotho</option>
+                <option value="Myanmarese">Myanmarese</option>
+                <option value="Namibian">Namibian</option>
+                <option value="Nauruan">Nauruan</option>
+                <option value="Nepalese">Nepalese</option>
+                <option value="Netherlands Antillean">Netherlands Antillean</option>
+                <option value="New Caledonian">New Caledonian</option>
+                <option value="New Zealander">New Zealander</option>
+                <option value="Nicaraguan">Nicaraguan</option>
+                <option value="Nigerien">Nigerien</option>
+                <option value="Niuean">Niuean</option>
+                <option value="North Korean">North Korean</option>
+                <option value="North Macedonian">North Macedonian</option>
+                <option value="Norwegian">Norwegian</option>
+                <option value="Omani">Omani</option>
+                <option value="Pakistani">Pakistani</option>
+                <option value="Palauan">Palauan</option>
+                <option value="Palestinian">Palestinian</option>
+                <option value="Panamanian">Panamanian</option>
+                <option value="Papuan New Guinean">Papuan New Guinean</option>
+                <option value="Paraguayan">Paraguayan</option>
+                <option value="Peruvian">Peruvian</option>
+                <option value="Philippine">Philippine</option>
+                <option value="Pitcairn Islander">Pitcairn Islander</option>\
+                <option value="Polish">Polish</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="Puerto Rican">Puerto Rican</option>
+                <option value="Qatari">Qatari</option>
+                <option value="Romanian">Romanian</option>
+                <option value="Russian">Russian</option>
+                <option value="Rwandan">Rwandan</option>
+                <option value="Saint Helenian">Saint Helenian</option>
+                <option value="Saint Kitts and Nevisian">Saint Kitts and Nevisian</option>
+                <option value="Saint Lucian">Saint Lucian</option>
+                <option value="Saint Martin (French part)">Saint Martin (French part)</option>
+                <option value="Samoan">Samoan</option>
+                <option value="San Marinese">San Marinese</option>
+                <option value="São Toméan">São Toméan</option>
+                <option value="Saudi">Saudi</option>
+                <option value="Senegalese">Senegalese</option>
+                <option value="Serbian">Serbian</option>
+                <option value="Seychellois">Seychellois</option>
+                <option value="Sierra Leonean">Sierra Leonean</option>
+                <option value="Singaporean">Singaporean</option>
+                <option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+                <option value="Slovak">Slovak</option>
+                <option value="Slovenian">Slovenian</option>
+                <option value="Solomon Islander">Solomon Islander</option>
+                <option value="Somali">Somali</option>
+                <option value="South African">South African</option>
+                <option value="South Korean">South Korean</option>
+                <option value="South Sudanese">South Sudanese</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Sri Lankan">Sri Lankan</option>
+                <option value="Sudanese">Sudanese</option>
+                <option value="Surinamese">Surinamese</option>
+                <option value="Swazi">Swazi</option>
+                <option value="Swedish">Swedish</option>
+                <option value="Swiss">Swiss</option>
+                <option value="Syrian">Syrian</option>
+                <option value="Taiwanese">Taiwanese</option>
+                <option value="Tajik">Tajik</option>
+                <option value="Tanzanian">Tanzanian</option>
+                <option value="Thai">Thai</option>
+                <option value="Togolese">Togolese</option>
+                <option value="Tongan">Tongan</option>
+                <option value="Trinidadian or Tobagonian">Trinidadian or Tobagonian</option>
+                <option value="Tunisian">Tunisian</option>
+                <option value="Turk">Turk</option>
+                <option value="Turkmen">Turkmen</option>
+                <option value="Tuvaluan">Tuvaluan</option>
+                <option value="Ugandan">Ugandan</option>
+                <option value="Ukrainian">Ukrainian</option>
+                <option value="Uruguayan">Uruguayan</option>
+                <option value="Uzbek">Uzbek</option>
+                <option value="Vanuatuan">Vanuatuan</option>
+                <option value="Vatican City citizen">Vatican City citizen</option>
+                <option value="Venezuelan">Venezuelan</option>
+                <option value="Vietnamese">Vietnamese</option>
+                <option value="Virgin Islander (British)">Virgin Islander (British)</option>
+                <option value="Virgin Islander (US)">Virgin Islander (US)</option>
+                <option value="Wallisian and Futunan">Wallisian and Futunan</option>
+                <option value="Yemeni">Yemeni</option>
+                <option value="Zambian">Zambian</option>
+                <option value="Zimbabwean">Zimbabwean</option>
+            </select><br><br><br>
+        </div>
+        <div class="form-group">
+            <label for="portOfArrival">Port Of Arrival*</label>
+            <select id="portOfArrival" name="portOfArrival">
+                <option value="----">----</option>
+                <option value="newYork">New York</option>
+                <option value="losAngeles">Los Angeles</option>
+                <option value="mumbai">Mumbai, India</option>
+                <option value="chennai">Chennai, India</option>
+                <option value="singapore">Singapore</option>
+            </select><br><br>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth (DD/MM/YYYY)</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="reenterEmail">Re-enter Email ID</label>
+            <input type="email" id="reenterEmail" name="reenterEmail" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="arrivalDate">Expected Date of Arrival (DD/MM/YYYY)</label>
+            <input type="date" id="arrivalDate" name="arrivalDate" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="visaService">Visa Service*</label>
+            <select id="visaService" name="visaService">
+                <option value="------">------ </option>
+                <option value="eTourist">eTOURIST VISA</option>
+                <option value="eMedical">eMEDICAL VISA</option>
+                <option value="eBusiness">eBUSINESS VISA</option>
+                <option value="eConference">eCONFERENCE Visa</option>
+                <option value="eMedicalAttendant">eMEDICAL ATTENDANT VISA</option>
+            </select><br><br>
+        </div>
+</div><br><br><br>
+    </form>
+  </div><br><br>
+
+<div class="container_4"><br>
+<div class="navbar-links">
+            <a href="r3">Next Page</a>
+</div><br><br>
+    </div><br><br><br>
+
+{% endblock content %}

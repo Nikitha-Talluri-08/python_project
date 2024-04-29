@@ -1,0 +1,75 @@
+{% extends "visa/home.html" %}
+
+{% block title %}
+  e-Visa Application
+{% endblock title %}
+
+{% block content %}
+
+  <div class="container">
+    <form method="POST">
+      {% csrf_token %}
+
+<div class="container_2">
+
+<h2>Declaration</h2>
+
+<ol>
+    <li>
+        <label for="arrestedProsecutedConvicted">Have you ever been arrested/prosecuted/convicted by a Court of Law of any country? *</label><br>
+        <input type="radio" id="arrestedProsecutedConvictedYes" name="arrestedProsecutedConvicted" value="yes"> Yes
+        <input type="radio" id="arrestedProsecutedConvictedNo" name="arrestedProsecutedConvicted" value="no"> No
+    </li><br>
+
+    <li>
+        <label for="refusedEntryDeported">Have you ever been refused entry/deported by any country, including India? *</label><br>
+        <input type="radio" id="refusedEntryDeportedYes" name="refusedEntryDeported" value="yes"> Yes
+        <input type="radio" id="refusedEntryDeportedNo" name="refusedEntryDeported" value="no"> No
+    </li><br>
+
+    <li>
+        <label for="engagedInTrafficking">Have you ever been engaged in Human trafficking/Drug trafficking/Child abuse/Crime against women/Economic offense/Financial fraud? *</label><br>
+        <input type="radio" id="engagedInTraffickingYes" name="engagedInTrafficking" value="yes"> Yes
+        <input type="radio" id="engagedInTraffickingNo" name="engagedInTrafficking" value="no"> No
+    </li><br>
+
+    <li>
+        <label for="engagedInCrime">Have you ever been engaged in Cyber crime/Terrorist activities/Sabotage/Espionage/Genocide/Political killing/other act of violence? *</label><br>
+        <input type="radio" id="engagedInCrimeYes" name="engagedInCrime" value="yes"> Yes
+        <input type="radio" id="engagedInCrimeNo" name="engagedInCrime" value="no"> No
+    </li><br>
+
+    <li>
+        <label for="expressedViews">Have you ever, by any means or medium, expressed views that justify or glorify terrorist violence or that may encourage others to terrorist acts or other serious criminal acts? *</label><br>
+        <input type="radio" id="expressedViewsYes" name="expressedViews" value="yes"> Yes
+        <input type="radio" id="expressedViewsNo" name="expressedViews" value="no"> No
+    </li><br>
+
+    <li>
+        <label for="soughtAsylum">Have you sought asylum (political or otherwise) in any country? *</label><br>
+        <input type="radio" id="soughtAsylumYes" name="soughtAsylum" value="yes"> Yes
+        <input type="radio" id="soughtAsylumNo" name="soughtAsylum" value="no"> No
+    </li><br>
+</ol>
+</div><br><br>
+        <input type="checkbox" id="instructions" name="instructions">
+            <label for="instructions">I TEST, hereby declare that the information furnished above is correct to the best of my knowledge. If the information is found false at any stage, I am liable for legal action/deportation/blacklisting as deemed fit by the Government of India.</label><br><br>
+
+
+
+        <button type="submit" class="btn btn-primary" id="submitBtn">Continue</button>
+
+    <script>
+        // Add an event listener to the submit button
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Redirect to the home page
+            window.location.href = 'http://127.0.0.1:8000/';
+
+            // Display a success message using an alert (you can also use a modal or other UI element)
+            alert('applied succesfully!');
+        });
+      </script>
+    </form>
+  </div><br><br>
+
+{% endblock content %}

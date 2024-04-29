@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>visa_applications.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #d5b778;}
+.s3 { color: #bababa;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+visa_applications.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!-- visa_applications.html --&gt;</span>
+
+<span class="s2">&lt;!DOCTYPE </span><span class="s3">html</span><span class="s2">&gt;</span>
+<span class="s2">&lt;html </span><span class="s3">lang</span><span class="s4">=&quot;en&quot;</span><span class="s2">&gt;</span>
+<span class="s2">&lt;head&gt;</span>
+    <span class="s2">&lt;meta </span><span class="s3">charset</span><span class="s4">=&quot;UTF-8&quot;</span><span class="s2">&gt;</span>
+    <span class="s2">&lt;title&gt;</span><span class="s1">Visa Applications</span><span class="s2">&lt;/title&gt;</span>
+<span class="s2">&lt;/head&gt;</span>
+<span class="s2">&lt;body&gt;</span>
+    <span class="s2">&lt;h1&gt;</span><span class="s1">Visa Applications</span><span class="s2">&lt;/h1&gt;</span>
+    <span class="s2">&lt;ul&gt;</span>
+        <span class="s1">{% for application in applications %}</span>
+            <span class="s2">&lt;li&gt;</span><span class="s1">{{ application.user.username }} - {{ application.status }}</span><span class="s2">&lt;/li&gt;</span>
+        <span class="s1">{% endfor %}</span>
+    <span class="s2">&lt;/ul&gt;</span>
+<span class="s2">&lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span>
+</pre>
+</body>
+</html>

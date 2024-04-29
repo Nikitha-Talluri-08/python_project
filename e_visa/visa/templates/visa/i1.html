@@ -1,0 +1,27 @@
+{% extends "visa/home.html" %}
+
+{% block title %}
+  e-Visa Application
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h2> Applicant Details Form </h2><br><br>
+    <form method="POST">
+        {% csrf_token %}
+
+    <script>
+        // Add an event listener to the submit button
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Redirect to the home page
+            window.location.href = 'http://127.0.0.1:8000/apply/';
+
+            // Display a success message using an alert (you can also use a modal or other UI element)
+            alert('You have filled the details successfully!
+            Go to Applicant details');
+        });
+    </script>
+    </form>
+  </div><br><br><br>
+
+{% endblock content %}

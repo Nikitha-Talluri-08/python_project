@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body style="background-color: #96B6C5;">
+    <div class="navbar">
+        <p>E-Visa Application</p>
+    </div><br><br>
+
+
+    {% block content %}
+
+        <div class="container-left">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="container_2">
+                <div class="nav-link-container">
+                    <a href="/apply">Visa apply/verification check here</a>
+                </div>
+                </div><br>
+                <div class="container_2">
+                <div class="nav-link-container">
+                    <a href="/payment">Payment Related Queries</a>
+                </div>
+                </div><br>
+                <div class="container_2">
+                <div class="nav-link-container">
+                    <a href="/instructions">Instructions</a>
+                </div>
+                </div><br>
+                <div class="container_2">
+                <div class="nav-link-container">
+                    <a href="/faqs">FAQ's</a>
+                </div>
+                </div><br>
+                <div class="container_2">
+                <div class="nav-link-container">
+                    <a href="/eligibility">Eligibility</a>
+                </div>
+                </div><br>
+
+            </form>
+        </div><br><br><br><br><br>
+
+{% endblock %}
+    <div class="container_3">
+<footer>
+      <p></p>
+    </footer>
+    </div>
+</body>
+</html>

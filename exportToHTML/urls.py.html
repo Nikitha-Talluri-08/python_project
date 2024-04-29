@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>urls.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+urls.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">urls </span><span class="s0">import </span><span class="s1">path</span>
+<span class="s0">from </span><span class="s2">. </span><span class="s0">import </span><span class="s1">views</span>
+<span class="s0">from </span><span class="s2">.</span><span class="s1">views </span><span class="s0">import </span><span class="s2">*</span>
+
+<span class="s1">urlpatterns </span><span class="s2">= [</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">''</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">home</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'home'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'login/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">login</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.login'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'signup/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">signup</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.signup'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'eligibility/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">eligibility</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.eligibility'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'faqs/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">faqs</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.faqs'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'instructions/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">instructions</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.instructions'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'payment/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">payment</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.payment'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'apply/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">apply</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.apply'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'regular/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">regular</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.regular'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'regular/r2/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">r2</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.r2'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'regular/r2/r3'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">r3</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.r3'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'regular/r2/r4'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">r4</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.r4'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'regular/r2/r5'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">r5</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.r5'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'regular/r2/r6'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">r6</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.r6'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'regular/r2/r7'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">r7</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.r7'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'i1/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">i1</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'views.i1'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'admin/login/'</span><span class="s2">, </span><span class="s1">views</span><span class="s2">.</span><span class="s1">admin_login</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'admin_login'</span><span class="s2">),</span>
+    <span class="s1">path</span><span class="s2">(</span><span class="s3">'apply-for-visa/'</span><span class="s2">, </span><span class="s1">apply_for_visa</span><span class="s2">, </span><span class="s1">name</span><span class="s2">=</span><span class="s3">'apply_for_visa'</span><span class="s2">),</span>
+
+<span class="s2">]</span></pre>
+</body>
+</html>

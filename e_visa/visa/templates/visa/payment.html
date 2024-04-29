@@ -1,0 +1,47 @@
+{% extends "visa/home.html" %}
+
+{% block title %}
+  Payment Related Queries
+{% endblock title %}
+
+{% block content %}
+
+  <div class="container-eligibility">
+    <h2> Payment Related Queries </h2>
+    <form method="POST">
+        {% csrf_token %}
+        <ol>
+            <br><br><li> <b> What is SBIePay? </b><br>
+SBIePay is the Payment Aggregator service of State Bank of India ? India?s Largest Bank and amongst top 50 Banks in the world, which provides bouquet of multiple payment options on a single page for the convenience of the customers.</li><br>
+            <li> <b> Can International payments be processed? </b><br>
+Yes, SBIePay has enabled international card issued by MasterCard and VISA both with and without 3D Secure authentication.</li><br>
+            <li> <b> How are Refunds processed? </b><br>
+In rare case of transaction status unknown to the applicant, which is when the applicant has not received success response due to time out or connectivity issue and the account has been debited, we advise the customer not to attempt another transaction immediately and rather provide their Order no. on the e-Visa site after 30 minutes to check the status of the transaction. If the transaction status is showing ?failed?, then customer may attempt another transaction. Also, the debited amount shall be refunded to the applicants? card account after reconciliation process within seven (7) days of transaction.</li><br>
+            <li> <b> What are the banking charges for e-Visa fee? </b><br>
+The banking charges for:
+
+Payment Gateway Card transactions (both Debit or Credit Card): 2.5%* of the applicable e-Visa fee.Paypal: 3.5%* of the applicable e-Visa fee.
+*The charges are inclusive of any applicable taxes.
+
+The breakup of transaction charges will be displayed on the Payment page for applicants? knowledge and to maintain transparency.</li><br>
+            <li> <b> What is the support available for the applicants? </b><br>
+At State Bank of India, we are committed to provide best customer services to our customers. Customers can email us at sbiepay[at]sbi[dot]co[dot]in for any queries related to their transaction. Alternatively, SBIePay provides 24*7*365 customer support to all the e-Visa applicants. Applicants can also call us on the below mentioned number(s):
+
+<br>Contact No: +919398728959</li><br>
+
+</ol>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Close</button>
+        <script>
+        // Add an event listener to the submit button
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Redirect to the home page
+            window.location.href = 'http://127.0.0.1:8000/';
+
+            // Display a success message using an alert (you can also use a modal or other UI element)
+            alert('Ready to apply?!');
+        });
+</script>
+    </form>
+  </div><br><br><br>
+
+{% endblock content %}

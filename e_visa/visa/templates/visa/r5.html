@@ -1,0 +1,56 @@
+{% extends "visa/home.html" %}
+
+{% block title %}
+  e-Visa Application
+{% endblock title %}
+
+{% block content %}
+
+  <div class="container">
+    <form method="POST">
+      {% csrf_token %}
+
+
+<div class="container_2">
+
+<h3>Previous Visa/Currently valid Visa Details</h3>
+
+<label for="visitedIndiaBefore">Have you ever visited India before? *</label>
+<input type="radio" id="visitedIndiaBeforeYes" name="visitedIndiaBefore" value="yes"> Yes
+<input type="radio" id="visitedIndiaBeforeNo" name="visitedIndiaBefore" value="no"> No<br><br>
+
+<label for="addressInIndia">Address</label>
+<input type="text" id="addressInIndia" name="addressInIndia"><br><br>
+
+<label for="citiesVisitedInIndia">Cities previously visited in India *</label>
+<input type="text" id="citiesVisitedInIndia" name="citiesVisitedInIndia"><br><br>
+
+<label for="lastIndianVisa">Last Indian Visa No/Currently valid Indian Visa No. *</label>
+<input type="text" id="lastIndianVisa" name="lastIndianVisa"><br><br>
+
+
+<label for="placeOfIssue">Place of Issue *</label>
+<input type="text" id="placeOfIssue" name="placeOfIssue"><br><br>
+
+<label for="dateOfIssue">Date of Issue *</label>
+<input type="text" id="dateOfIssue" name="dateOfIssue"><br><br>
+
+<label for="visaRefused">Has permission to visit or to extend stay in India previously been refused?</label>
+<input type="radio" id="visaRefusedYes" name="visaRefused" value="yes"> Yes
+<input type="radio" id="visaRefusedNo" name="visaRefused" value="no"> No<br><br>
+
+<label for="refusedDetails">If so, when and by whom (Mention Control No. and date also) *</label>
+<textarea id="refusedDetails" name="refusedDetails"></textarea><br><br>
+
+</div><br><br><br>
+
+    </form>
+  </div><br><br>
+
+<div class="container_4"><br>
+<div class="navbar-links">
+            <a href="r6">Next Page</a>
+</div><br><br>
+    </div><br><br><br>
+
+{% endblock content %}

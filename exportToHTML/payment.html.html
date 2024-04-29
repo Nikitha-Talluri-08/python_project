@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>payment.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #d5b778;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+payment.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends &quot;visa/home.html&quot; %}</span>
+
+<span class="s0">{% block title %}</span>
+  <span class="s0">Payment Related Queries</span>
+<span class="s0">{% endblock title %}</span>
+
+<span class="s0">{% block content %}</span>
+
+  <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container-eligibility&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;h2&gt; </span><span class="s0">Payment Related Queries </span><span class="s1">&lt;/h2&gt;</span>
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">=&quot;POST&quot;</span><span class="s1">&gt;</span>
+        <span class="s0">{% csrf_token %}</span>
+        <span class="s1">&lt;ol&gt;</span>
+            <span class="s1">&lt;br&gt;&lt;br&gt;&lt;li&gt; &lt;b&gt; </span><span class="s0">What is SBIePay? </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">SBIePay is the Payment Aggregator service of State Bank of India ? India?s Largest Bank and amongst top 50 Banks in the world, which provides bouquet of multiple payment options on a single page for the convenience of the customers.</span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">Can International payments be processed? </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">Yes, SBIePay has enabled international card issued by MasterCard and VISA both with and without 3D Secure authentication.</span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">How are Refunds processed? </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">In rare case of transaction status unknown to the applicant, which is when the applicant has not received success response due to time out or connectivity issue and the account has been debited, we advise the customer not to attempt another transaction immediately and rather provide their Order no. on the e-Visa site after 30 minutes to check the status of the transaction. If the transaction status is showing ?failed?, then customer may attempt another transaction. Also, the debited amount shall be refunded to the applicants? card account after reconciliation process within seven (7) days of transaction.</span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">What are the banking charges for e-Visa fee? </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">The banking charges for:</span>
+
+<span class="s0">Payment Gateway Card transactions (both Debit or Credit Card): 2.5%* of the applicable e-Visa fee.Paypal: 3.5%* of the applicable e-Visa fee.</span>
+<span class="s0">*The charges are inclusive of any applicable taxes.</span>
+
+<span class="s0">The breakup of transaction charges will be displayed on the Payment page for applicants? knowledge and to maintain transparency.</span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">What is the support available for the applicants? </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">At State Bank of India, we are committed to provide best customer services to our customers. Customers can email us at sbiepay[at]sbi[dot]co[dot]in for any queries related to their transaction. Alternatively, SBIePay provides 24*7*365 customer support to all the e-Visa applicants. Applicants can also call us on the below mentioned number(s):</span>
+
+<span class="s1">&lt;br&gt;</span><span class="s0">Contact No: +919398728959</span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+
+<span class="s1">&lt;/ol&gt;</span>
+        <span class="s1">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;submit&quot; </span><span class="s2">class</span><span class="s3">=&quot;btn btn-primary&quot; </span><span class="s2">id</span><span class="s3">=&quot;submitBtn&quot;</span><span class="s1">&gt;</span><span class="s0">Close</span><span class="s1">&lt;/button&gt;</span>
+        <span class="s1">&lt;script&gt;</span>
+        <span class="s4">// Add an event listener to the submit button</span>
+        <span class="s0">document.getElementById(</span><span class="s3">'submitBtn'</span><span class="s0">).addEventListener(</span><span class="s3">'click'</span><span class="s0">, </span><span class="s5">function</span><span class="s0">() {</span>
+            <span class="s4">// Redirect to the home page</span>
+            <span class="s0">window.location.href = </span><span class="s3">'http://127.0.0.1:8000/'</span><span class="s0">;</span>
+
+            <span class="s4">// Display a success message using an alert (you can also use a modal or other UI element)</span>
+            <span class="s0">alert(</span><span class="s3">'Ready to apply?!'</span><span class="s0">);</span>
+        <span class="s0">});</span>
+<span class="s1">&lt;/script&gt;</span>
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s0">{% endblock content %}</span>
+</pre>
+</body>
+</html>

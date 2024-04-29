@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>instructions.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #d5b778;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+instructions.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends &quot;visa/home.html&quot; %}</span>
+
+<span class="s0">{% block title %}</span>
+  <span class="s0">Instructions</span>
+<span class="s0">{% endblock title %}</span>
+
+<span class="s0">{% block content %}</span>
+
+  <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container-eligibility&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;h2&gt; </span><span class="s0">Instructions:- </span><span class="s1">&lt;/h2&gt;</span>
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">=&quot;POST&quot;</span><span class="s1">&gt;</span>
+        <span class="s0">{% csrf_token %}</span>
+        <span class="s1">&lt;br&gt;&lt;p&gt; &lt;b&gt; </span><span class="s0">Applicants must be fill eVisa application himself/herself and give correct information in each column and take responsibility for the correctness of information provided. </span><span class="s1">&lt;/b&gt; &lt;/p&gt;&lt;br&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;ol&gt; &lt;li&gt; &lt;b&gt; </span><span class="s0">For e-Tourist Visa:- </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">Scanned Bio Page of the passport showing the Photograph and Details *</span>
+<span class="s0">For short term courses, copy of letter from the institute/organization/hospital etc. concerned on its letter-head *</span>
+            <span class="s0">For voluntary work of short duration, copy of letter from the organization concerned on its letter-head * </span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">For e-Medical Visa:- </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">Scanned Bio Page of the passport showing the Photograph and Details *</span>
+                <span class="s0">Copy of Letter from the Hospital concerned in India on its letterhead which including the date / tentative date which admission have been suggested.</span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+    <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">For e-Medical Attendant Visa:- </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+        <span class="s0">Scanned Bio Page of the passport showing the Photograph and Details* </span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+    <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">For e-Business Visa:- </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">Scanned Bio Page of the passport showing the Photograph and Details*</span>
+<span class="s0">Copy of Business Card</span>
+    <span class="s0">Any letter of invitation if applicable from indian parties which wish you conduct the business (optional). </span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">For Sports Related Activity:- </span><span class="s1">&lt;/b&gt; &lt;br&gt;</span>
+<span class="s0">Copy of Passport page containing personal particulars *</span>
+<span class="s0">Approval of the Government of India in the Ministry of Youth Affairs and Sports (Department of Sports)</span>
+<span class="s0">Invitation Letter to foreign sports teams and sports persons to visit India by the concerned Sports Federation/Association in India.</span>
+<span class="s0">If the applicant had participated in any commercial sports event during his/her previous visit to India, then documents regarding Tax compliance for the said visit are to be furnished</span>
+<span class="s0">If the sports event entails visit to Restricted or Protected Areas in India, below mentioned additional documents are also to be submitted</span>
+<span class="s0">(a) Clearance for holding the event from the Ministry of Home Affairs, Government of India.</span>
+<span class="s0">(b) Political Clearance for holding the event from the Ministry of external Affairs, Government of India.</span>
+        <span class="s0">(c) Requisite clearance from the Ministry of Youth Affairs &amp; Sports</span>
+            <span class="s1">&lt;li&gt;&lt;br&gt; &lt;b&gt; </span><span class="s0">For e-Business Visa visiting:- </span><span class="s1">&lt;/b&gt; &lt;br&gt; </span><span class="s0">&quot;To deliver lecture/s under Global Initiative for Academic Networks (GIAN)&quot; </span><span class="s1">&lt;/li&gt;</span>
+<span class="s0">Scanned Bio Page of the passport showing the Photograph and Details*</span>
+<span class="s0">Invitation of the host institute to the foreign faculty</span>
+<span class="s0">Copy of the sanction order under GIAN issued by the National Coordinating Institute viz. IIT Kharagpur</span>
+            <span class="s0">Copy of the synopsis of the courses to be taken up by the faculty </span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+    <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">For e-Conference Visa:- </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">Scanned Bio Page of the passport showing the Photograph and Details*</span>
+<span class="s0">Invitation from organizer, which applicant may seek from this organiser.</span>
+<span class="s0">Political clearance from Ministry of External Affairs</span>
+    <span class="s0">Event clearance from Ministry of Home Affairs </span><span class="s1">&lt;/li&gt;&lt;br&gt;&lt;br&gt;</span>
+    <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">The digital photograph to be uploaded along with the Visa application should meet the following requirements: </span><span class="s1">&lt;/b&gt;&lt;br&gt;</span>
+<span class="s0">Format - JPEG</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Size</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Minimum 10 KB</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Maximum 1 MB</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">The height and width of the Photo must be equal.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Photo should present full face, front view, eyes open and without spectacles</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Center head within frame and present full head from top of hair to bottom of chin</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Background should be plain light colored or white background.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">No shadows on the face or on the background.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Without borders.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Scanned Bio Page of the passport showing the Photograph and Details.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Format -PDF</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Size : Minimum 10 KB ,Maximum 300 KB</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Other document for Business/Medical Purpose</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Format -PDF</span><span class="s1">&lt;br&gt;</span>
+        <span class="s0">Size : Minimum 10 KB ,Maximum 300 KB </span><span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;/ol&gt;</span>
+
+        <span class="s1">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;submit&quot; </span><span class="s2">class</span><span class="s3">=&quot;btn btn-primary&quot; </span><span class="s2">id</span><span class="s3">=&quot;submitBtn&quot;</span><span class="s1">&gt;</span><span class="s0">Close</span><span class="s1">&lt;/button&gt;</span>
+        <span class="s1">&lt;script&gt;</span>
+        <span class="s4">// Add an event listener to the submit button</span>
+        <span class="s0">document.getElementById(</span><span class="s3">'submitBtn'</span><span class="s0">).addEventListener(</span><span class="s3">'click'</span><span class="s0">, </span><span class="s5">function</span><span class="s0">() {</span>
+            <span class="s4">// Redirect to the home page</span>
+            <span class="s0">window.location.href = </span><span class="s3">'http://127.0.0.1:8000/'</span><span class="s0">;</span>
+
+            <span class="s4">// Display a success message using an alert (you can also use a modal or other UI element)</span>
+            <span class="s0">alert(</span><span class="s3">'Ready to apply?'</span><span class="s0">);</span>
+        <span class="s0">});</span>
+<span class="s1">&lt;/script&gt;</span>
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s0">{% endblock content %}</span></pre>
+</body>
+</html>

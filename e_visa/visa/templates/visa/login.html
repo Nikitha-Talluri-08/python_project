@@ -1,0 +1,18 @@
+{% extends "visa/home.html" %}
+{% block title %}
+Login
+{% endblock title %}
+{% block content %}
+<div class="container">
+<h2>Login</h2>
+<h4>{{message}}</h4>
+<form method="post">
+    {% csrf_token %}
+    <br><br><label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="submit" class="btn btn-primary" id="submitBtn">Continue</button>
+    </form>
+</div><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

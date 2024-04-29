@@ -1,0 +1,22 @@
+<!-- process_application.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Process Visa Application</title>
+</head>
+<body>
+    <h1>Process Visa Application</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="Pending" {% if application.status == 'Pending' %} selected {% endif %}>Pending</option>
+            <option value="Accepted" {% if application.status == 'Accepted' %} selected {% endif %}>Accepted</option>
+            <option value="Rejected" {% if application.status == 'Rejected' %} selected {% endif %}>Rejected</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

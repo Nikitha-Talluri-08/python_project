@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>r7.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #d5b778;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+r7.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends &quot;visa/home.html&quot; %}</span>
+
+<span class="s0">{% block title %}</span>
+  <span class="s0">e-Visa Application</span>
+<span class="s0">{% endblock title %}</span>
+
+<span class="s0">{% block content %}</span>
+
+  <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">=&quot;POST&quot;</span><span class="s1">&gt;</span>
+      <span class="s0">{% csrf_token %}</span>
+
+<span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container_2&quot;</span><span class="s1">&gt;</span>
+
+<span class="s1">&lt;h2&gt;</span><span class="s0">Declaration</span><span class="s1">&lt;/h2&gt;</span>
+
+<span class="s1">&lt;ol&gt;</span>
+    <span class="s1">&lt;li&gt;</span>
+        <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;arrestedProsecutedConvicted&quot;</span><span class="s1">&gt;</span><span class="s0">Have you ever been arrested/prosecuted/convicted by a Court of Law of any country? *</span><span class="s1">&lt;/label&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;arrestedProsecutedConvictedYes&quot; </span><span class="s2">name</span><span class="s3">=&quot;arrestedProsecutedConvicted&quot; </span><span class="s2">value</span><span class="s3">=&quot;yes&quot;</span><span class="s1">&gt; </span><span class="s0">Yes</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;arrestedProsecutedConvictedNo&quot; </span><span class="s2">name</span><span class="s3">=&quot;arrestedProsecutedConvicted&quot; </span><span class="s2">value</span><span class="s3">=&quot;no&quot;</span><span class="s1">&gt; </span><span class="s0">No</span>
+    <span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+
+    <span class="s1">&lt;li&gt;</span>
+        <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;refusedEntryDeported&quot;</span><span class="s1">&gt;</span><span class="s0">Have you ever been refused entry/deported by any country, including India? *</span><span class="s1">&lt;/label&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;refusedEntryDeportedYes&quot; </span><span class="s2">name</span><span class="s3">=&quot;refusedEntryDeported&quot; </span><span class="s2">value</span><span class="s3">=&quot;yes&quot;</span><span class="s1">&gt; </span><span class="s0">Yes</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;refusedEntryDeportedNo&quot; </span><span class="s2">name</span><span class="s3">=&quot;refusedEntryDeported&quot; </span><span class="s2">value</span><span class="s3">=&quot;no&quot;</span><span class="s1">&gt; </span><span class="s0">No</span>
+    <span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+
+    <span class="s1">&lt;li&gt;</span>
+        <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;engagedInTrafficking&quot;</span><span class="s1">&gt;</span><span class="s0">Have you ever been engaged in Human trafficking/Drug trafficking/Child abuse/Crime against women/Economic offense/Financial fraud? *</span><span class="s1">&lt;/label&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;engagedInTraffickingYes&quot; </span><span class="s2">name</span><span class="s3">=&quot;engagedInTrafficking&quot; </span><span class="s2">value</span><span class="s3">=&quot;yes&quot;</span><span class="s1">&gt; </span><span class="s0">Yes</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;engagedInTraffickingNo&quot; </span><span class="s2">name</span><span class="s3">=&quot;engagedInTrafficking&quot; </span><span class="s2">value</span><span class="s3">=&quot;no&quot;</span><span class="s1">&gt; </span><span class="s0">No</span>
+    <span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+
+    <span class="s1">&lt;li&gt;</span>
+        <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;engagedInCrime&quot;</span><span class="s1">&gt;</span><span class="s0">Have you ever been engaged in Cyber crime/Terrorist activities/Sabotage/Espionage/Genocide/Political killing/other act of violence? *</span><span class="s1">&lt;/label&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;engagedInCrimeYes&quot; </span><span class="s2">name</span><span class="s3">=&quot;engagedInCrime&quot; </span><span class="s2">value</span><span class="s3">=&quot;yes&quot;</span><span class="s1">&gt; </span><span class="s0">Yes</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;engagedInCrimeNo&quot; </span><span class="s2">name</span><span class="s3">=&quot;engagedInCrime&quot; </span><span class="s2">value</span><span class="s3">=&quot;no&quot;</span><span class="s1">&gt; </span><span class="s0">No</span>
+    <span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+
+    <span class="s1">&lt;li&gt;</span>
+        <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;expressedViews&quot;</span><span class="s1">&gt;</span><span class="s0">Have you ever, by any means or medium, expressed views that justify or glorify terrorist violence or that may encourage others to terrorist acts or other serious criminal acts? *</span><span class="s1">&lt;/label&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;expressedViewsYes&quot; </span><span class="s2">name</span><span class="s3">=&quot;expressedViews&quot; </span><span class="s2">value</span><span class="s3">=&quot;yes&quot;</span><span class="s1">&gt; </span><span class="s0">Yes</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;expressedViewsNo&quot; </span><span class="s2">name</span><span class="s3">=&quot;expressedViews&quot; </span><span class="s2">value</span><span class="s3">=&quot;no&quot;</span><span class="s1">&gt; </span><span class="s0">No</span>
+    <span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+
+    <span class="s1">&lt;li&gt;</span>
+        <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;soughtAsylum&quot;</span><span class="s1">&gt;</span><span class="s0">Have you sought asylum (political or otherwise) in any country? *</span><span class="s1">&lt;/label&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;soughtAsylumYes&quot; </span><span class="s2">name</span><span class="s3">=&quot;soughtAsylum&quot; </span><span class="s2">value</span><span class="s3">=&quot;yes&quot;</span><span class="s1">&gt; </span><span class="s0">Yes</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;soughtAsylumNo&quot; </span><span class="s2">name</span><span class="s3">=&quot;soughtAsylum&quot; </span><span class="s2">value</span><span class="s3">=&quot;no&quot;</span><span class="s1">&gt; </span><span class="s0">No</span>
+    <span class="s1">&lt;/li&gt;&lt;br&gt;</span>
+<span class="s1">&lt;/ol&gt;</span>
+<span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;</span>
+        <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;checkbox&quot; </span><span class="s2">id</span><span class="s3">=&quot;instructions&quot; </span><span class="s2">name</span><span class="s3">=&quot;instructions&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;instructions&quot;</span><span class="s1">&gt;</span><span class="s0">I TEST, hereby declare that the information furnished above is correct to the best of my knowledge. If the information is found false at any stage, I am liable for legal action/deportation/blacklisting as deemed fit by the Government of India.</span><span class="s1">&lt;/label&gt;&lt;br&gt;&lt;br&gt;</span>
+
+
+
+        <span class="s1">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;submit&quot; </span><span class="s2">class</span><span class="s3">=&quot;btn btn-primary&quot; </span><span class="s2">id</span><span class="s3">=&quot;submitBtn&quot;</span><span class="s1">&gt;</span><span class="s0">Continue</span><span class="s1">&lt;/button&gt;</span>
+
+    <span class="s1">&lt;script&gt;</span>
+        <span class="s4">// Add an event listener to the submit button</span>
+        <span class="s0">document.getElementById(</span><span class="s3">'submitBtn'</span><span class="s0">).addEventListener(</span><span class="s3">'click'</span><span class="s0">, </span><span class="s5">function</span><span class="s0">() {</span>
+            <span class="s4">// Redirect to the home page</span>
+            <span class="s0">window.location.href = </span><span class="s3">'http://127.0.0.1:8000/'</span><span class="s0">;</span>
+
+            <span class="s4">// Display a success message using an alert (you can also use a modal or other UI element)</span>
+            <span class="s0">alert(</span><span class="s3">'applied succesfully!'</span><span class="s0">);</span>
+        <span class="s0">});</span>
+      <span class="s1">&lt;/script&gt;</span>
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s0">{% endblock content %}</span></pre>
+</body>
+</html>

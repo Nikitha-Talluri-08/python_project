@@ -1,0 +1,79 @@
+{% extends "visa/home.html" %}
+
+{% block title %}
+  Instructions
+{% endblock title %}
+
+{% block content %}
+
+  <div class="container-eligibility">
+    <h2> Instructions:- </h2>
+    <form method="POST">
+        {% csrf_token %}
+        <br><p> <b> Applicants must be fill eVisa application himself/herself and give correct information in each column and take responsibility for the correctness of information provided. </b> </p><br><br>
+        <ol> <li> <b> For e-Tourist Visa:- </b><br>
+Scanned Bio Page of the passport showing the Photograph and Details *
+For short term courses, copy of letter from the institute/organization/hospital etc. concerned on its letter-head *
+            For voluntary work of short duration, copy of letter from the organization concerned on its letter-head * </li><br>
+            <li> <b> For e-Medical Visa:- </b><br>
+Scanned Bio Page of the passport showing the Photograph and Details *
+                Copy of Letter from the Hospital concerned in India on its letterhead which including the date / tentative date which admission have been suggested.</li><br>
+    <li> <b> For e-Medical Attendant Visa:- </b><br>
+        Scanned Bio Page of the passport showing the Photograph and Details* </li><br>
+    <li> <b> For e-Business Visa:- </b><br>
+Scanned Bio Page of the passport showing the Photograph and Details*
+Copy of Business Card
+    Any letter of invitation if applicable from indian parties which wish you conduct the business (optional). </li><br>
+            <li> <b> For Sports Related Activity:- </b> <br>
+Copy of Passport page containing personal particulars *
+Approval of the Government of India in the Ministry of Youth Affairs and Sports (Department of Sports)
+Invitation Letter to foreign sports teams and sports persons to visit India by the concerned Sports Federation/Association in India.
+If the applicant had participated in any commercial sports event during his/her previous visit to India, then documents regarding Tax compliance for the said visit are to be furnished
+If the sports event entails visit to Restricted or Protected Areas in India, below mentioned additional documents are also to be submitted
+(a) Clearance for holding the event from the Ministry of Home Affairs, Government of India.
+(b) Political Clearance for holding the event from the Ministry of external Affairs, Government of India.
+        (c) Requisite clearance from the Ministry of Youth Affairs & Sports
+            <li><br> <b> For e-Business Visa visiting:- </b> <br> "To deliver lecture/s under Global Initiative for Academic Networks (GIAN)" </li>
+Scanned Bio Page of the passport showing the Photograph and Details*
+Invitation of the host institute to the foreign faculty
+Copy of the sanction order under GIAN issued by the National Coordinating Institute viz. IIT Kharagpur
+            Copy of the synopsis of the courses to be taken up by the faculty </li><br>
+    <li> <b> For e-Conference Visa:- </b><br>
+Scanned Bio Page of the passport showing the Photograph and Details*
+Invitation from organizer, which applicant may seek from this organiser.
+Political clearance from Ministry of External Affairs
+    Event clearance from Ministry of Home Affairs </li><br><br>
+    <li> <b> The digital photograph to be uploaded along with the Visa application should meet the following requirements: </b><br>
+Format - JPEG<br>
+Size<br>
+Minimum 10 KB<br>
+Maximum 1 MB<br>
+The height and width of the Photo must be equal.<br>
+Photo should present full face, front view, eyes open and without spectacles<br>
+Center head within frame and present full head from top of hair to bottom of chin<br>
+Background should be plain light colored or white background.<br>
+No shadows on the face or on the background.<br>
+Without borders.<br>
+Scanned Bio Page of the passport showing the Photograph and Details.<br>
+Format -PDF<br>
+Size : Minimum 10 KB ,Maximum 300 KB<br>
+Other document for Business/Medical Purpose<br>
+Format -PDF<br>
+        Size : Minimum 10 KB ,Maximum 300 KB </li><br>
+        </ol>
+
+        <button type="submit" class="btn btn-primary" id="submitBtn">Close</button>
+        <script>
+        // Add an event listener to the submit button
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Redirect to the home page
+            window.location.href = 'http://127.0.0.1:8000/';
+
+            // Display a success message using an alert (you can also use a modal or other UI element)
+            alert('Ready to apply?');
+        });
+</script>
+    </form>
+  </div><br><br><br>
+
+{% endblock content %}

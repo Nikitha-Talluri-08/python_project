@@ -1,0 +1,320 @@
+<html>
+<head>
+<title>regular.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #d5b778;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+regular.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends &quot;visa/home.html&quot; %}</span>
+
+<span class="s0">{% block title %}</span>
+  <span class="s0">e-Visa Application</span>
+<span class="s0">{% endblock title %}</span>
+
+<span class="s0">{% block content %}</span>
+<span class="s1">&lt;br&gt;</span>
+  <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;h2&gt; </span><span class="s0">Applicant Details Form </span><span class="s1">&lt;/h2&gt;</span>
+
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">=&quot;POST&quot;</span><span class="s1">&gt;</span>
+      <span class="s0">{% csrf_token %}</span>
+
+        <span class="s1">&lt;br&gt;&lt;br&gt;&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container_2&quot;</span><span class="s1">&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;surname&quot;</span><span class="s1">&gt;</span><span class="s0">Surname(as given in passport)</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">name</span><span class="s3">=&quot;surname&quot;</span><span class="s1">&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;surname&quot;</span><span class="s1">&gt;</span><span class="s0">Given name(as given in passport)</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">name</span><span class="s3">=&quot;given name&quot;</span><span class="s1">&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;gender&quot;</span><span class="s1">&gt;</span><span class="s0">Gender</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;select </span><span class="s2">name</span><span class="s3">=&quot;gender&quot;</span><span class="s1">&gt;</span>
+             <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;&quot;</span><span class="s1">&gt;</span><span class="s0">-- select one --</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;male&quot;</span><span class="s1">&gt;</span><span class="s0">MALE</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;female&quot;</span><span class="s1">&gt;</span><span class="s0">FEMALE</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;others&quot;</span><span class="s1">&gt;</span><span class="s0">OTHERS</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;prefer not to say&quot;</span><span class="s1">&gt;</span><span class="s0">PREFER NOT TO SAY</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;/select&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;city&quot;</span><span class="s1">&gt;</span><span class="s0">Town/City of birth</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">name</span><span class="s3">=&quot;city&quot;</span><span class="s1">&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+
+          <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;Country of Birth&quot;</span><span class="s1">&gt;</span><span class="s0">Country of Birth</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;select </span><span class="s2">name</span><span class="s3">=&quot;Country of Birth&quot;</span><span class="s1">&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;&quot;</span><span class="s1">&gt;</span><span class="s0">-- select one --</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Afghanistan&quot;</span><span class="s1">&gt;</span><span class="s0">Afghanistan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Albania&quot;</span><span class="s1">&gt;</span><span class="s0">Albania</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Algeria&quot;</span><span class="s1">&gt;</span><span class="s0">Algeria</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Andorra&quot;</span><span class="s1">&gt;</span><span class="s0">Andorra</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Angola&quot;</span><span class="s1">&gt;</span><span class="s0">Angola</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Antigua and Barbuda&quot;</span><span class="s1">&gt;</span><span class="s0">Antigua and Barbuda</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Argentina&quot;</span><span class="s1">&gt;</span><span class="s0">Argentina</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Armenia&quot;</span><span class="s1">&gt;</span><span class="s0">Armenia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Australia&quot;</span><span class="s1">&gt;</span><span class="s0">Australia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Austria&quot;</span><span class="s1">&gt;</span><span class="s0">Austria</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Azerbaijan&quot;</span><span class="s1">&gt;</span><span class="s0">Azerbaijan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Bahamas&quot;</span><span class="s1">&gt;</span><span class="s0">Bahamas</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Bahrain&quot;</span><span class="s1">&gt;</span><span class="s0">Bahrain</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Bangladesh&quot;</span><span class="s1">&gt;</span><span class="s0">Bangladesh</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Barbados&quot;</span><span class="s1">&gt;</span><span class="s0">Barbados</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Belarus&quot;</span><span class="s1">&gt;</span><span class="s0">Belarus</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Belgium&quot;</span><span class="s1">&gt;</span><span class="s0">Belgium</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Belize&quot;</span><span class="s1">&gt;</span><span class="s0">Belize</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Benin&quot;</span><span class="s1">&gt;</span><span class="s0">Benin</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Bhutan&quot;</span><span class="s1">&gt;</span><span class="s0">Bhutan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Bolivia&quot;</span><span class="s1">&gt;</span><span class="s0">Bolivia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Bosnia and Herzegovina&quot;</span><span class="s1">&gt;</span><span class="s0">Bosnia and Herzegovina</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Botswana&quot;</span><span class="s1">&gt;</span><span class="s0">Botswana</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Brazil&quot;</span><span class="s1">&gt;</span><span class="s0">Brazil</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Brunei&quot;</span><span class="s1">&gt;</span><span class="s0">Brunei</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Bulgaria&quot;</span><span class="s1">&gt;</span><span class="s0">Bulgaria</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Burkina Faso&quot;</span><span class="s1">&gt;</span><span class="s0">Burkina Faso</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Burundi&quot;</span><span class="s1">&gt;</span><span class="s0">Burundi</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Cabo Verde&quot;</span><span class="s1">&gt;</span><span class="s0">Cabo Verde</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Cambodia&quot;</span><span class="s1">&gt;</span><span class="s0">Cambodia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Cameroon&quot;</span><span class="s1">&gt;</span><span class="s0">Cameroon</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Canada&quot;</span><span class="s1">&gt;</span><span class="s0">Canada</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Central African Republic&quot;</span><span class="s1">&gt;</span><span class="s0">Central African Republic</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Chad&quot;</span><span class="s1">&gt;</span><span class="s0">Chad</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Chile&quot;</span><span class="s1">&gt;</span><span class="s0">Chile</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;China&quot;</span><span class="s1">&gt;</span><span class="s0">China</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Colombia&quot;</span><span class="s1">&gt;</span><span class="s0">Colombia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Comoros&quot;</span><span class="s1">&gt;</span><span class="s0">Comoros</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Congo (Brazzaville)&quot;</span><span class="s1">&gt;</span><span class="s0">Congo (Brazzaville)</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Costa Rica&quot;</span><span class="s1">&gt;</span><span class="s0">Costa Rica</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Côte d'Ivoire&quot;</span><span class="s1">&gt;</span><span class="s0">Côte d'Ivoire</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Croatia&quot;</span><span class="s1">&gt;</span><span class="s0">Croatia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Cuba&quot;</span><span class="s1">&gt;</span><span class="s0">Cuba</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Cyprus&quot;</span><span class="s1">&gt;</span><span class="s0">Cyprus</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Czechia&quot;</span><span class="s1">&gt;</span><span class="s0">Czechia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Democratic Republic of the Congo&quot;</span><span class="s1">&gt;</span><span class="s0">Democratic Republic of the Congo</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Denmark&quot;</span><span class="s1">&gt;</span><span class="s0">Denmark</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Djibouti&quot;</span><span class="s1">&gt;</span><span class="s0">Djibouti</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Dominica&quot;</span><span class="s1">&gt;</span><span class="s0">Dominica</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Dominican Republic&quot;</span><span class="s1">&gt;</span><span class="s0">Dominican Republic</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;East Timor&quot;</span><span class="s1">&gt;</span><span class="s0">East Timor</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Ecuador&quot;</span><span class="s1">&gt;</span><span class="s0">Ecuador</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Egypt&quot;</span><span class="s1">&gt;</span><span class="s0">Egypt</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;El Salvador&quot;</span><span class="s1">&gt;</span><span class="s0">El Salvador</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Equatorial Guinea&quot;</span><span class="s1">&gt;</span><span class="s0">Equatorial Guinea</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Eritrea&quot;</span><span class="s1">&gt;</span><span class="s0">Eritrea</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Estonia&quot;</span><span class="s1">&gt;</span><span class="s0">Estonia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Eswatini&quot;</span><span class="s1">&gt;</span><span class="s0">Eswatini</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Ethiopia&quot;</span><span class="s1">&gt;</span><span class="s0">Ethiopia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Fiji&quot;</span><span class="s1">&gt;</span><span class="s0">Fiji</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Finland&quot;</span><span class="s1">&gt;</span><span class="s0">Finland</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;France&quot;</span><span class="s1">&gt;</span><span class="s0">France</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Gabon&quot;</span><span class="s1">&gt;</span><span class="s0">Gabon</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Gambia&quot;</span><span class="s1">&gt;</span><span class="s0">Gambia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Georgia&quot;</span><span class="s1">&gt;</span><span class="s0">Georgia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Germany&quot;</span><span class="s1">&gt;</span><span class="s0">Germany</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Ghana&quot;</span><span class="s1">&gt;</span><span class="s0">Ghana</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Greece&quot;</span><span class="s1">&gt;</span><span class="s0">Greece</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Grenada&quot;</span><span class="s1">&gt;</span><span class="s0">Grenada</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Guatemala&quot;</span><span class="s1">&gt;</span><span class="s0">Guatemala</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Guinea&quot;</span><span class="s1">&gt;</span><span class="s0">Guinea</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Guinea-Bissau&quot;</span><span class="s1">&gt;</span><span class="s0">Guinea-Bissau</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Guyana&quot;</span><span class="s1">&gt;</span><span class="s0">Guyana</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Haiti&quot;</span><span class="s1">&gt;</span><span class="s0">Haiti</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Honduras&quot;</span><span class="s1">&gt;</span><span class="s0">Honduras</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Hungary&quot;</span><span class="s1">&gt;</span><span class="s0">Hungary</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Iceland&quot;</span><span class="s1">&gt;</span><span class="s0">Iceland</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;India&quot;</span><span class="s1">&gt;</span><span class="s0">India</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Indonesia&quot;</span><span class="s1">&gt;</span><span class="s0">Indonesia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Iran&quot;</span><span class="s1">&gt;</span><span class="s0">Iran</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Iraq&quot;</span><span class="s1">&gt;</span><span class="s0">Iraq</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Ireland&quot;</span><span class="s1">&gt;</span><span class="s0">Ireland</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Israel&quot;</span><span class="s1">&gt;</span><span class="s0">Israel</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Italy&quot;</span><span class="s1">&gt;</span><span class="s0">Italy</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Jamaica&quot;</span><span class="s1">&gt;</span><span class="s0">Jamaica</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Japan&quot;</span><span class="s1">&gt;</span><span class="s0">Japan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Jordan&quot;</span><span class="s1">&gt;</span><span class="s0">Jordan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Kazakhstan&quot;</span><span class="s1">&gt;</span><span class="s0">Kazakhstan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Kenya&quot;</span><span class="s1">&gt;</span><span class="s0">Kenya</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Kiribati&quot;</span><span class="s1">&gt;</span><span class="s0">Kiribati</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Kosovo&quot;</span><span class="s1">&gt;</span><span class="s0">Kosovo</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Kuwait&quot;</span><span class="s1">&gt;</span><span class="s0">Kuwait</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Kyrgyzstan&quot;</span><span class="s1">&gt;</span><span class="s0">Kyrgyzstan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Laos&quot;</span><span class="s1">&gt;</span><span class="s0">Laos</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Latvia&quot;</span><span class="s1">&gt;</span><span class="s0">Latvia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Lebanon&quot;</span><span class="s1">&gt;</span><span class="s0">Lebanon</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Lesotho&quot;</span><span class="s1">&gt;</span><span class="s0">Lesotho</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Liberia&quot;</span><span class="s1">&gt;</span><span class="s0">Liberia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Libya&quot;</span><span class="s1">&gt;</span><span class="s0">Libya</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Liechtenstein&quot;</span><span class="s1">&gt;</span><span class="s0">Liechtenstein</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Lithuania&quot;</span><span class="s1">&gt;</span><span class="s0">Lithuania</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Luxembourg&quot;</span><span class="s1">&gt;</span><span class="s0">Luxembourg</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Madagascar&quot;</span><span class="s1">&gt;</span><span class="s0">Madagascar</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Malawi&quot;</span><span class="s1">&gt;</span><span class="s0">Malawi</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Malaysia&quot;</span><span class="s1">&gt;</span><span class="s0">Malaysia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Maldives&quot;</span><span class="s1">&gt;</span><span class="s0">Maldives</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Mali&quot;</span><span class="s1">&gt;</span><span class="s0">Mali</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Malta&quot;</span><span class="s1">&gt;</span><span class="s0">Malta</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Marshall Islands&quot;</span><span class="s1">&gt;</span><span class="s0">Marshall Islands</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Mauritania&quot;</span><span class="s1">&gt;</span><span class="s0">Mauritania</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Mauritius&quot;</span><span class="s1">&gt;</span><span class="s0">Mauritius</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Mexico&quot;</span><span class="s1">&gt;</span><span class="s0">Mexico</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Micronesia&quot;</span><span class="s1">&gt;</span><span class="s0">Micronesia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Moldova&quot;</span><span class="s1">&gt;</span><span class="s0">Moldova</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Monaco&quot;</span><span class="s1">&gt;</span><span class="s0">Monaco</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Mongolia&quot;</span><span class="s1">&gt;</span><span class="s0">Mongolia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Montenegro&quot;</span><span class="s1">&gt;</span><span class="s0">Montenegro</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Morocco&quot;</span><span class="s1">&gt;</span><span class="s0">Morocco</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Mozambique&quot;</span><span class="s1">&gt;</span><span class="s0">Mozambique</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Myanmar&quot;</span><span class="s1">&gt;</span><span class="s0">Myanmar</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Namibia&quot;</span><span class="s1">&gt;</span><span class="s0">Namibia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Nauru&quot;</span><span class="s1">&gt;</span><span class="s0">Nauru</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Nepal&quot;</span><span class="s1">&gt;</span><span class="s0">Nepal</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Netherlands&quot;</span><span class="s1">&gt;</span><span class="s0">Netherlands</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;New Zealand&quot;</span><span class="s1">&gt;</span><span class="s0">New Zealand</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Nicaragua&quot;</span><span class="s1">&gt;</span><span class="s0">Nicaragua</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Niger&quot;</span><span class="s1">&gt;</span><span class="s0">Niger</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Nigeria&quot;</span><span class="s1">&gt;</span><span class="s0">Nigeria</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;North Korea&quot;</span><span class="s1">&gt;</span><span class="s0">North Korea</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;North Macedonia&quot;</span><span class="s1">&gt;</span><span class="s0">North Macedonia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Norway&quot;</span><span class="s1">&gt;</span><span class="s0">Norway</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Oman&quot;</span><span class="s1">&gt;</span><span class="s0">Oman</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Pakistan&quot;</span><span class="s1">&gt;</span><span class="s0">Pakistan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Palau&quot;</span><span class="s1">&gt;</span><span class="s0">Palau</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Palestine&quot;</span><span class="s1">&gt;</span><span class="s0">Palestine</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Panama&quot;</span><span class="s1">&gt;</span><span class="s0">Panama</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Papua New Guinea&quot;</span><span class="s1">&gt;</span><span class="s0">Papua New Guinea</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Paraguay&quot;</span><span class="s1">&gt;</span><span class="s0">Paraguay</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Peru&quot;</span><span class="s1">&gt;</span><span class="s0">Peru</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Philippines&quot;</span><span class="s1">&gt;</span><span class="s0">Philippines</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Poland&quot;</span><span class="s1">&gt;</span><span class="s0">Poland</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Portugal&quot;</span><span class="s1">&gt;</span><span class="s0">Portugal</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Qatar&quot;</span><span class="s1">&gt;</span><span class="s0">Qatar</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Romania&quot;</span><span class="s1">&gt;</span><span class="s0">Romania</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Russia&quot;</span><span class="s1">&gt;</span><span class="s0">Russia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Rwanda&quot;</span><span class="s1">&gt;</span><span class="s0">Rwanda</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Saint Kitts and Nevis&quot;</span><span class="s1">&gt;</span><span class="s0">Saint Kitts and Nevis</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Saint Lucia&quot;</span><span class="s1">&gt;</span><span class="s0">Saint Lucia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Saint Vincent and the Grenadines&quot;</span><span class="s1">&gt;</span><span class="s0">Saint Vincent and the Grenadines</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Samoa&quot;</span><span class="s1">&gt;</span><span class="s0">Samoa</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;San Marino&quot;</span><span class="s1">&gt;</span><span class="s0">San Marino</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;São Tomé and Príncipe&quot;</span><span class="s1">&gt;</span><span class="s0">São Tomé and Príncipe</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Saudi Arabia&quot;</span><span class="s1">&gt;</span><span class="s0">Saudi Arabia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Senegal&quot;</span><span class="s1">&gt;</span><span class="s0">Senegal</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Serbia&quot;</span><span class="s1">&gt;</span><span class="s0">Serbia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Seychelles&quot;</span><span class="s1">&gt;</span><span class="s0">Seychelles</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Sierra Leone&quot;</span><span class="s1">&gt;</span><span class="s0">Sierra Leone</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Singapore&quot;</span><span class="s1">&gt;</span><span class="s0">Singapore</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Slovakia&quot;</span><span class="s1">&gt;</span><span class="s0">Slovakia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Slovenia&quot;</span><span class="s1">&gt;</span><span class="s0">Slovenia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Solomon Islands&quot;</span><span class="s1">&gt;</span><span class="s0">Solomon Islands</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Somalia&quot;</span><span class="s1">&gt;</span><span class="s0">Somalia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;South Africa&quot;</span><span class="s1">&gt;</span><span class="s0">South Africa</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;South Korea&quot;</span><span class="s1">&gt;</span><span class="s0">South Korea</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;South Sudan&quot;</span><span class="s1">&gt;</span><span class="s0">South Sudan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Spain&quot;</span><span class="s1">&gt;</span><span class="s0">Spain</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Sri Lanka&quot;</span><span class="s1">&gt;</span><span class="s0">Sri Lanka</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Sudan&quot;</span><span class="s1">&gt;</span><span class="s0">Sudan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Suriname&quot;</span><span class="s1">&gt;</span><span class="s0">Suriname</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Sweden&quot;</span><span class="s1">&gt;</span><span class="s0">Sweden</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Switzerland&quot;</span><span class="s1">&gt;</span><span class="s0">Switzerland</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Syria&quot;</span><span class="s1">&gt;</span><span class="s0">Syria</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Taiwan&quot;</span><span class="s1">&gt;</span><span class="s0">Taiwan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Tajikistan&quot;</span><span class="s1">&gt;</span><span class="s0">Tajikistan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Tanzania&quot;</span><span class="s1">&gt;</span><span class="s0">Tanzania</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Thailand&quot;</span><span class="s1">&gt;</span><span class="s0">Thailand</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Togo&quot;</span><span class="s1">&gt;</span><span class="s0">Togo</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Tonga&quot;</span><span class="s1">&gt;</span><span class="s0">Tonga</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Trinidad and Tobago&quot;</span><span class="s1">&gt;</span><span class="s0">Trinidad and Tobago</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Tunisia&quot;</span><span class="s1">&gt;</span><span class="s0">Tunisia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Turkey&quot;</span><span class="s1">&gt;</span><span class="s0">Turkey</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Turkmenistan&quot;</span><span class="s1">&gt;</span><span class="s0">Turkmenistan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Tuvalu&quot;</span><span class="s1">&gt;</span><span class="s0">Tuvalu</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Uganda&quot;</span><span class="s1">&gt;</span><span class="s0">Uganda</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Ukraine&quot;</span><span class="s1">&gt;</span><span class="s0">Ukraine</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;United Arab Emirates&quot;</span><span class="s1">&gt;</span><span class="s0">United Arab Emirates</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;United Kingdom&quot;</span><span class="s1">&gt;</span><span class="s0">United Kingdom</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;United States&quot;</span><span class="s1">&gt;</span><span class="s0">United States</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Uruguay&quot;</span><span class="s1">&gt;</span><span class="s0">Uruguay</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Uzbekistan&quot;</span><span class="s1">&gt;</span><span class="s0">Uzbekistan</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Vanuatu&quot;</span><span class="s1">&gt;</span><span class="s0">Vanuatu</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Vatican City&quot;</span><span class="s1">&gt;</span><span class="s0">Vatican City</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Venezuela&quot;</span><span class="s1">&gt;</span><span class="s0">Venezuela</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Vietnam&quot;</span><span class="s1">&gt;</span><span class="s0">Vietnam</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Yemen&quot;</span><span class="s1">&gt;</span><span class="s0">Yemen</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Zambia&quot;</span><span class="s1">&gt;</span><span class="s0">Zambia</span><span class="s1">&lt;/option&gt;</span>
+                <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;Zimbabwe&quot;</span><span class="s1">&gt;</span><span class="s0">Zimbabwe</span><span class="s1">&lt;/option&gt;</span>
+            <span class="s1">&lt;/select&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;id no&quot;</span><span class="s1">&gt;</span><span class="s0">Citizenship/National ID No</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">name</span><span class="s3">=&quot;id no&quot;</span><span class="s1">&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;religion&quot;</span><span class="s1">&gt;</span><span class="s0">Religion</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;select </span><span class="s2">name</span><span class="s3">=&quot;religion&quot;</span><span class="s1">&gt;</span>
+             <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;&quot;</span><span class="s1">&gt;</span><span class="s0">-- select one --</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;ordinary&quot;</span><span class="s1">&gt;</span><span class="s0">HINDU</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;official&quot;</span><span class="s1">&gt;</span><span class="s0">CHRISTIAN</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;diplomatic&quot;</span><span class="s1">&gt;</span><span class="s0">MUSLIM</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;service&quot;</span><span class="s1">&gt;</span><span class="s0">BUDDHISM</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;special&quot;</span><span class="s1">&gt;</span><span class="s0">JAINISM</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;special&quot;</span><span class="s1">&gt;</span><span class="s0">SIKHISM</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;special&quot;</span><span class="s1">&gt;</span><span class="s0">PREFER NOT TO SAY</span><span class="s1">&lt;/option&gt;</span>
+<span class="s1">&lt;/select&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;identification&quot;</span><span class="s1">&gt;</span><span class="s0">Visible Identification Marks</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">name</span><span class="s3">=&quot;identification&quot;</span><span class="s1">&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;education&quot;</span><span class="s1">&gt;</span><span class="s0">Educational Qualification</span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;select </span><span class="s2">name</span><span class="s3">=&quot;education&quot;</span><span class="s1">&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;&quot;</span><span class="s1">&gt;</span><span class="s0">-- select one --</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;high&quot;</span><span class="s1">&gt;</span><span class="s0">High School Diploma or Equivalent</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;associate&quot;</span><span class="s1">&gt;</span><span class="s0">Associate's Degree</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;bachelor&quot;</span><span class="s1">&gt;</span><span class="s0">Bachelor's Degree (e.g., B.A., B.Sc.)</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;master&quot;</span><span class="s1">&gt;</span><span class="s0">Master's Degree(e.g., M.A., M.S.)</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;doctorate&quot;</span><span class="s1">&gt;</span><span class="s0">Doctorate or Ph.D.</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;professional&quot;</span><span class="s1">&gt;</span><span class="s0">Professional Degree (e.g., M.D., J.D.)</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;college&quot;</span><span class="s1">&gt;</span><span class="s0">Some College, No Degree</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;vocational&quot;</span><span class="s1">&gt;</span><span class="s0">Vocational or Technical Certificate</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;high school&quot;</span><span class="s1">&gt;</span><span class="s0">High School In Progress</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;progress&quot;</span><span class="s1">&gt;</span><span class="s0">College In Progress</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;others&quot;</span><span class="s1">&gt;</span><span class="s0">Other (Specify)</span><span class="s1">&lt;/option&gt;</span>
+        <span class="s1">&lt;/select&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;nationalisation&quot;</span><span class="s1">&gt;</span><span class="s0">Did you acquire nationality by birth or naturalisation? </span><span class="s1">&lt;/label&gt;</span>
+            <span class="s1">&lt;select </span><span class="s2">name</span><span class="s3">=&quot;nationalisation&quot;</span><span class="s1">&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;&quot;</span><span class="s1">&gt;</span><span class="s0">-- select one --</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;birth&quot;</span><span class="s1">&gt;</span><span class="s0">By Birth</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;descent&quot;</span><span class="s1">&gt;</span><span class="s0">By Descent</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;naturalisation&quot;</span><span class="s1">&gt;</span><span class="s0">By Naturalization</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;marriage&quot;</span><span class="s1">&gt;</span><span class="s0">By Marriage</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;adoption&quot;</span><span class="s1">&gt;</span><span class="s0">By Adoption</span><span class="s1">&lt;/option&gt;</span>
+  <span class="s1">&lt;option </span><span class="s2">value</span><span class="s3">=&quot;others&quot;</span><span class="s1">&gt;</span><span class="s0">By Other Means</span><span class="s1">&lt;/option&gt;</span>
+        <span class="s1">&lt;/select&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+<span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</span>
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container_4&quot;</span><span class="s1">&gt;&lt;br&gt;</span>
+<span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;navbar-links&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;r2&quot;</span><span class="s1">&gt;</span><span class="s0">Next Page</span><span class="s1">&lt;/a&gt;</span>
+<span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;</span>
+    <span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="s0">{% endblock content %}</span></pre>
+</body>
+</html>

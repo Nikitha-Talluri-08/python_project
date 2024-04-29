@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>faqs.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #d5b778;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+faqs.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends &quot;visa/home.html&quot; %}</span>
+
+<span class="s0">{% block title %}</span>
+  <span class="s0">FAQ's</span>
+<span class="s0">{% endblock title %}</span>
+
+<span class="s0">{% block content %}</span>
+
+  <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container-eligibility&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;h2&gt; </span><span class="s0">FAQ's </span><span class="s1">&lt;/h2&gt;</span>
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">=&quot;POST&quot;</span><span class="s1">&gt;</span>
+        <span class="s0">{% csrf_token %}</span>
+        <span class="s1">&lt;ol&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">Who is eligible for e-Visa Services?</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Ans- </span><span class="s1">&lt;/b&gt;</span><span class="s0">The following are the eligibility conditions for availing e-Visa services-</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">i. Nationals of countries listed on the e-Visa website https://indianvisaonline.gov.in/evisa/ are eligible to apply for e-Visa Services.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">ii. Foreigners whose sole objective for visiting India is:-</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">(a) Recreation and sightseeing</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">(b) Casual visit to meet friends and relatives</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">(c) Attending short term yoga programme or short term courses on local languages, music, dance, arts &amp; crafts, cooking, medicine etc. which should not be a formal or structured course/programme</span>
+<span class="s0">(courses not exceeding 6 months duration and not issuing a qualifying certificate/diploma etc. to the participants)</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">(d) Voluntary work of short duration (for a maximum period of one month, which do not involve any monetary payment or consideration of any kind in return)</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">(e) Medical treatment, including treatment under Indian systems of medicine</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">(f) As attendant to e-Medical visa holder</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">(g) Business purpose</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">(h) Attending a conference/ seminar/ workshop.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">iii. Passport should have at least six months validity at the time of making application for grant of e-Visa and a re-entry permit, if that is required under the law of the country of nationality of the applicant.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">The passport should have at least two blank pages for stamping by the Immigration Officer.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">v. The foreigner should have return ticket or onward journey ticket, with sufficient money to spend during his/her stay in India.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">v. Foreigners of Pakistani origin or having Pakistani Passport are not eligible for e-Visa. Foreigners who are not Pakistani nationals, but whose parents or grandparents (either paternal or maternal) was born</span>
+<span class="s0">in, or was permanently resident in Pakistan, are also not eligible for e-Visa. They may apply for regular Visa at Indian Mission.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">vi. Not available to Diplomatic/Official Passport Holders or Laissez-passer/ international travel document holders.</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">vii. Not available to individuals endorsed on Parent's/Spouse's Passport i.e. each individual should have a separate passport.</span><span class="s1">&lt;/li&gt;&lt;br&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">Is there any fee other than the processing fee?</span><span class="s1">&lt;br&gt;</span>
+                <span class="s0">Ans- </span><span class="s1">&lt;/b&gt; </span><span class="s0">No, there is no fee other than the processing fee for e-Visa application and it is non-refundable. Please visit our website to know the fee applicable for your country as it is country-specific.</span><span class="s1">&lt;/li&gt;&lt;br&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">When should I apply?</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Ans- </span><span class="s1">&lt;/b&gt;</span><span class="s0">(i) For e-Tourist Visa (01 year / 05 years), e-Business Visa, e-Medical, e-Medical Attendant and e-Conference visa, applicants of the eligible countries/territories may apply online minimum 4 days in advance</span>
+<span class="s0">of the date of arrival. Such application can be made 120 days in advance from proposed date of travel.</span><span class="s1">&lt;br&gt;</span>
+ <span class="s0">(ii) For e-Tourist Visa (30 days) , applicants of the eligible countries/territories may apply online minimum 4 days in advance of the date of arrival. Such application can be made 30 days in advance from</span>
+<span class="s0">proposed date of travel.</span><span class="s1">&lt;/li&gt;&lt;br&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">Can I convert my e-Visa to any other Visa?</span><span class="s1">&lt;br&gt;</span>
+<span class="s0">Ans- </span><span class="s1">&lt;/b&gt; </span><span class="s0">No, e-Visa is non-extendable and non-convertible.</span><span class="s1">&lt;/li&gt;&lt;br&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;li&gt; &lt;b&gt; </span><span class="s0">What are the necessary documents required to apply for an e-Business Visa other than the Passport?</span><span class="s1">&lt;br&gt;</span>
+                <span class="s0">Ans - </span><span class="s1">&lt;/b&gt; </span><span class="s0">You have to upload the business card along with the details of Indian Firm/Company (which you intend to associate yourself with) for business activities.</span>
+<span class="s0">For Sports Related Activity under e-Business Visa, please refer Instructions for applicant page for the list of documents required.</span><span class="s1">&lt;/li&gt;&lt;br&gt;&lt;br&gt;</span>
+            <span class="s1">&lt;/ol&gt;</span>
+        <span class="s1">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;submit&quot; </span><span class="s2">class</span><span class="s3">=&quot;btn btn-primary&quot; </span><span class="s2">id</span><span class="s3">=&quot;submitBtn&quot;</span><span class="s1">&gt;</span><span class="s0">Close</span><span class="s1">&lt;/button&gt;</span>
+        <span class="s1">&lt;script&gt;</span>
+
+        <span class="s4">// Add an event listener to the submit button</span>
+        <span class="s0">document.getElementById(</span><span class="s3">'submitBtn'</span><span class="s0">).addEventListener(</span><span class="s3">'click'</span><span class="s0">, </span><span class="s5">function</span><span class="s0">() {</span>
+            <span class="s4">// Redirect to the home page</span>
+            <span class="s0">window.location.href = </span><span class="s3">'http://127.0.0.1:8000/'</span><span class="s0">;</span>
+
+            <span class="s4">// Display a success message using an alert (you can also use a modal or other UI element)</span>
+            <span class="s0">alert(</span><span class="s3">'Ready to apply?'</span><span class="s0">);</span>
+        <span class="s0">});</span>
+
+
+    <span class="s1">&lt;/script&gt;</span>
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s0">{% endblock content %}</span></pre>
+</body>
+</html>

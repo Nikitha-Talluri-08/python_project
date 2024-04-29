@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>admin.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+admin.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># admin.py</span>
+<span class="s2">from </span><span class="s1">django</span><span class="s3">.</span><span class="s1">contrib </span><span class="s2">import </span><span class="s1">admin</span>
+<span class="s2">from </span><span class="s3">.</span><span class="s1">models </span><span class="s2">import </span><span class="s1">Userregistration</span><span class="s3">, </span><span class="s1">VisaApplication</span>
+
+
+<span class="s2">class </span><span class="s1">VisaApplicationAdmin</span><span class="s3">(</span><span class="s1">admin</span><span class="s3">.</span><span class="s1">ModelAdmin</span><span class="s3">):</span>
+    <span class="s1">list_display </span><span class="s3">= [</span><span class="s4">'user'</span><span class="s3">, </span><span class="s4">'passport_number'</span><span class="s3">, </span><span class="s4">'country_of_origin'</span><span class="s3">, </span><span class="s4">'purpose_of_visit'</span><span class="s3">, </span><span class="s4">'application_date'</span><span class="s3">, </span><span class="s4">'status'</span><span class="s3">]</span>
+    <span class="s1">list_filter </span><span class="s3">= [</span><span class="s4">'status'</span><span class="s3">]</span>
+    <span class="s1">search_fields </span><span class="s3">= [</span><span class="s4">'user__username'</span><span class="s3">, </span><span class="s4">'passport_number'</span><span class="s3">, </span><span class="s4">'country_of_origin'</span><span class="s3">]</span>
+    <span class="s1">actions </span><span class="s3">= [</span><span class="s4">'approve_application'</span><span class="s3">, </span><span class="s4">'reject_application'</span><span class="s3">]</span>
+
+    <span class="s2">def </span><span class="s1">approve_application</span><span class="s3">(</span><span class="s1">self</span><span class="s3">, </span><span class="s1">request</span><span class="s3">, </span><span class="s1">queryset</span><span class="s3">):</span>
+        <span class="s1">queryset</span><span class="s3">.</span><span class="s1">update</span><span class="s3">(</span><span class="s1">status</span><span class="s3">=</span><span class="s4">'Approved'</span><span class="s3">)</span>
+
+    <span class="s2">def </span><span class="s1">reject_application</span><span class="s3">(</span><span class="s1">self</span><span class="s3">, </span><span class="s1">request</span><span class="s3">, </span><span class="s1">queryset</span><span class="s3">):</span>
+        <span class="s1">queryset</span><span class="s3">.</span><span class="s1">update</span><span class="s3">(</span><span class="s1">status</span><span class="s3">=</span><span class="s4">'Rejected'</span><span class="s3">)</span>
+
+    <span class="s1">approve_application</span><span class="s3">.</span><span class="s1">short_description </span><span class="s3">= </span><span class="s4">&quot;Approve selected visa applications&quot;</span>
+    <span class="s1">reject_application</span><span class="s3">.</span><span class="s1">short_description </span><span class="s3">= </span><span class="s4">&quot;Reject selected visa applications&quot;</span>
+
+
+<span class="s1">admin</span><span class="s3">.</span><span class="s1">site</span><span class="s3">.</span><span class="s1">register</span><span class="s3">(</span><span class="s1">Userregistration</span><span class="s3">)</span>
+<span class="s1">admin</span><span class="s3">.</span><span class="s1">site</span><span class="s3">.</span><span class="s1">register</span><span class="s3">(</span><span class="s1">VisaApplication</span><span class="s3">, </span><span class="s1">VisaApplicationAdmin</span><span class="s3">)</span>
+</pre>
+</body>
+</html>

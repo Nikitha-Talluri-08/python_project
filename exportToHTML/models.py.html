@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>models.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+models.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">db </span><span class="s0">import </span><span class="s1">models</span>
+<span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">contrib</span><span class="s2">.</span><span class="s1">auth</span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">User</span>
+
+
+<span class="s3"># Create your models here.</span>
+<span class="s0">class </span><span class="s1">Userregistration</span><span class="s2">(</span><span class="s1">models</span><span class="s2">.</span><span class="s1">Model</span><span class="s2">):</span>
+    <span class="s1">id</span><span class="s2">=</span><span class="s1">models</span><span class="s2">.</span><span class="s1">AutoField</span><span class="s2">(</span><span class="s1">blank</span><span class="s2">=</span><span class="s0">False</span><span class="s2">,</span><span class="s1">primary_key</span><span class="s2">=</span><span class="s0">True</span><span class="s2">)</span>
+    <span class="s1">username </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length</span><span class="s2">=</span><span class="s4">50</span><span class="s2">,</span><span class="s1">blank</span><span class="s2">=</span><span class="s0">False</span><span class="s2">)</span>
+    <span class="s1">email </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">EmailField</span><span class="s2">(</span><span class="s1">max_length</span><span class="s2">=</span><span class="s4">50</span><span class="s2">,</span><span class="s1">blank</span><span class="s2">=</span><span class="s0">False</span><span class="s2">)</span>
+    <span class="s1">password </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length</span><span class="s2">=</span><span class="s4">20</span><span class="s2">)</span>
+    <span class="s1">repassword </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length</span><span class="s2">=</span><span class="s4">20</span><span class="s2">)</span>
+
+    <span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">username</span>
+
+
+<span class="s0">class </span><span class="s1">VisaApplication</span><span class="s2">(</span><span class="s1">models</span><span class="s2">.</span><span class="s1">Model</span><span class="s2">):</span>
+    <span class="s1">STATUS_CHOICES </span><span class="s2">= [</span>
+        <span class="s2">(</span><span class="s5">'Pending'</span><span class="s2">, </span><span class="s5">'Pending'</span><span class="s2">),</span>
+        <span class="s2">(</span><span class="s5">'Approved'</span><span class="s2">, </span><span class="s5">'Approved'</span><span class="s2">),</span>
+        <span class="s2">(</span><span class="s5">'Rejected'</span><span class="s2">, </span><span class="s5">'Rejected'</span><span class="s2">),</span>
+    <span class="s2">]</span>
+
+    <span class="s1">user </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">ForeignKey</span><span class="s2">(</span><span class="s1">User</span><span class="s2">, </span><span class="s1">on_delete</span><span class="s2">=</span><span class="s1">models</span><span class="s2">.</span><span class="s1">CASCADE</span><span class="s2">)</span>
+    <span class="s1">passport_number </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length</span><span class="s2">=</span><span class="s4">20</span><span class="s2">)</span>
+    <span class="s1">country_of_origin </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length</span><span class="s2">=</span><span class="s4">100</span><span class="s2">)</span>
+    <span class="s1">purpose_of_visit </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">TextField</span><span class="s2">()</span>
+    <span class="s1">application_date </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">DateTimeField</span><span class="s2">(</span><span class="s1">auto_now_add</span><span class="s2">=</span><span class="s0">True</span><span class="s2">)</span>
+    <span class="s1">status </span><span class="s2">= </span><span class="s1">models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length</span><span class="s2">=</span><span class="s4">10</span><span class="s2">, </span><span class="s1">choices</span><span class="s2">=</span><span class="s1">STATUS_CHOICES</span><span class="s2">, </span><span class="s1">default</span><span class="s2">=</span><span class="s5">'Pending'</span><span class="s2">)</span>
+
+    <span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s5">f'</span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">user</span><span class="s2">.</span><span class="s1">username</span><span class="s0">} </span><span class="s5">- </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">passport_number</span><span class="s0">} </span><span class="s5">- </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">status</span><span class="s0">}</span><span class="s5">'</span>
+</pre>
+</body>
+</html>

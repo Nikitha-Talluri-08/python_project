@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>r6.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #d5b778;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+r6.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends &quot;visa/home.html&quot; %}</span>
+
+<span class="s0">{% block title %}</span>
+  <span class="s0">e-Visa Application</span>
+<span class="s0">{% endblock title %}</span>
+
+<span class="s0">{% block content %}</span>
+
+  <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">=&quot;POST&quot;</span><span class="s1">&gt;</span>
+      <span class="s0">{% csrf_token %}</span>
+
+<span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container_2&quot;</span><span class="s1">&gt;</span>
+
+<span class="s1">&lt;h3&gt;</span><span class="s0">SAARC Country Visit Details</span><span class="s1">&lt;/h3&gt;</span>
+
+<span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;visitedSAARCCountries&quot;</span><span class="s1">&gt;</span><span class="s0">Have you visited SAARC countries (except your own country) during the last 3 years? *</span><span class="s1">&lt;/label&gt;</span>
+<span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;visitedSAARCCountriesYes&quot; </span><span class="s2">name</span><span class="s3">=&quot;visitedSAARCCountries&quot; </span><span class="s2">value</span><span class="s3">=&quot;yes&quot;</span><span class="s1">&gt; </span><span class="s0">Yes</span>
+<span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;visitedSAARCCountriesNo&quot; </span><span class="s2">name</span><span class="s3">=&quot;visitedSAARCCountries&quot; </span><span class="s2">value</span><span class="s3">=&quot;no&quot;</span><span class="s1">&gt; </span><span class="s0">No</span><span class="s1">&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;referenceNameIndia&quot;</span><span class="s1">&gt;</span><span class="s0">Reference Name in India *</span><span class="s1">&lt;/label&gt;</span>
+<span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;referenceNameIndia&quot; </span><span class="s2">name</span><span class="s3">=&quot;referenceNameIndia&quot;</span><span class="s1">&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;referenceAddressIndia&quot;</span><span class="s1">&gt;</span><span class="s0">Address *</span><span class="s1">&lt;/label&gt;</span>
+<span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;referenceAddressIndia&quot; </span><span class="s2">name</span><span class="s3">=&quot;referenceAddressIndia&quot;</span><span class="s1">&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;referencePhoneIndia&quot;</span><span class="s1">&gt;</span><span class="s0">Phone *</span><span class="s1">&lt;/label&gt;</span>
+<span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;referencePhoneIndia&quot; </span><span class="s2">name</span><span class="s3">=&quot;referencePhoneIndia&quot;</span><span class="s1">&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;referenceNameAlbania&quot;</span><span class="s1">&gt;</span><span class="s0">Reference Name in ALBANIA *</span><span class="s1">&lt;/label&gt;</span>
+<span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;referenceNameAlbania&quot; </span><span class="s2">name</span><span class="s3">=&quot;referenceNameAlbania&quot;</span><span class="s1">&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;referenceAddressAlbania&quot;</span><span class="s1">&gt;</span><span class="s0">Address</span><span class="s1">&lt;/label&gt;</span>
+<span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;referenceAddressAlbania&quot; </span><span class="s2">name</span><span class="s3">=&quot;referenceAddressAlbania&quot;</span><span class="s1">&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;referencePhoneAlbania&quot;</span><span class="s1">&gt;</span><span class="s0">Phone *</span><span class="s1">&lt;/label&gt;</span>
+<span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;referencePhoneAlbania&quot; </span><span class="s2">name</span><span class="s3">=&quot;referencePhoneAlbania&quot;</span><span class="s1">&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</span>
+
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;&lt;br&gt;</span>
+<span class="s1">&lt;br&gt;&lt;br&gt;</span>
+<span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container_4&quot;</span><span class="s1">&gt;&lt;br&gt;</span>
+<span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;navbar-links&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;r7&quot;</span><span class="s1">&gt;</span><span class="s0">Next Page</span><span class="s1">&lt;/a&gt;</span>
+<span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;</span>
+    <span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s0">{% endblock content %}</span></pre>
+</body>
+</html>

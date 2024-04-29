@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>i1.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #d5b778;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+i1.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends &quot;visa/home.html&quot; %}</span>
+
+<span class="s0">{% block title %}</span>
+  <span class="s0">e-Visa Application</span>
+<span class="s0">{% endblock title %}</span>
+
+<span class="s0">{% block content %}</span>
+<span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;h2&gt; </span><span class="s0">Applicant Details Form </span><span class="s1">&lt;/h2&gt;&lt;br&gt;&lt;br&gt;</span>
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">=&quot;POST&quot;</span><span class="s1">&gt;</span>
+        <span class="s0">{% csrf_token %}</span>
+
+    <span class="s1">&lt;script&gt;</span>
+        <span class="s4">// Add an event listener to the submit button</span>
+        <span class="s0">document.getElementById(</span><span class="s3">'submitBtn'</span><span class="s0">).addEventListener(</span><span class="s3">'click'</span><span class="s0">, </span><span class="s5">function</span><span class="s0">() {</span>
+            <span class="s4">// Redirect to the home page</span>
+            <span class="s0">window.location.href = </span><span class="s3">'http://127.0.0.1:8000/apply/'</span><span class="s0">;</span>
+
+            <span class="s4">// Display a success message using an alert (you can also use a modal or other UI element)</span>
+            <span class="s0">alert(</span><span class="s3">'You have filled the details successfully!</span>
+            <span class="s0">Go to Applicant details</span><span class="s3">');</span>
+        <span class="s0">});</span>
+    <span class="s1">&lt;/script&gt;</span>
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</span>
+
+<span class="s0">{% endblock content %}</span></pre>
+</body>
+</html>

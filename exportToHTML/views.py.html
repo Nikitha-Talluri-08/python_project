@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>views.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+views.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">db</span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">Q</span>
+<span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">db</span><span class="s2">.</span><span class="s1">models</span><span class="s2">.</span><span class="s1">sql </span><span class="s0">import </span><span class="s1">AND</span>
+<span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">shortcuts </span><span class="s0">import </span><span class="s1">render</span><span class="s2">, </span><span class="s1">redirect</span>
+<span class="s0">from </span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">Userregistration</span>
+<span class="s0">from </span><span class="s2">.</span><span class="s1">forms </span><span class="s0">import </span><span class="s1">UserregistrationForm</span>
+<span class="s0">from </span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">VisaApplication</span>
+<span class="s0">from </span><span class="s2">.</span><span class="s1">forms </span><span class="s0">import </span><span class="s1">VisaApplicationForm</span>
+<span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">contrib</span><span class="s2">.</span><span class="s1">auth </span><span class="s0">import </span><span class="s1">authenticate</span><span class="s2">, </span><span class="s1">login</span>
+
+
+<span class="s0">def </span><span class="s1">home</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/home.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">login</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s1">context </span><span class="s2">= {</span><span class="s3">'message'</span><span class="s2">: </span><span class="s3">'Invalid Credentials......'</span><span class="s2">}</span>
+    <span class="s0">if </span><span class="s1">request</span><span class="s2">.</span><span class="s1">method </span><span class="s2">== </span><span class="s3">'POST'</span><span class="s2">:</span>
+        <span class="s1">username </span><span class="s2">= </span><span class="s1">request</span><span class="s2">.</span><span class="s1">POST</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">'username'</span><span class="s2">)</span>
+        <span class="s1">password </span><span class="s2">= </span><span class="s1">request</span><span class="s2">.</span><span class="s1">POST</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">'password'</span><span class="s2">)</span>
+        <span class="s1">data </span><span class="s2">= </span><span class="s1">Userregistration</span><span class="s2">.</span><span class="s1">objects</span><span class="s2">.</span><span class="s1">filter</span><span class="s2">(</span><span class="s1">Q</span><span class="s2">(</span><span class="s1">username</span><span class="s2">=</span><span class="s1">username</span><span class="s2">), </span><span class="s1">Q</span><span class="s2">(</span><span class="s1">password</span><span class="s2">=</span><span class="s1">password</span><span class="s2">))</span>
+        <span class="s0">if </span><span class="s1">data</span><span class="s2">:</span>
+            <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/main_home.html'</span><span class="s2">)</span>
+        <span class="s0">else</span><span class="s2">:</span>
+            <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/login.html'</span><span class="s2">, </span><span class="s1">context</span><span class="s2">)</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/login.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">signup</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s1">form </span><span class="s2">= </span><span class="s1">UserregistrationForm</span><span class="s2">(</span><span class="s1">request</span><span class="s2">.</span><span class="s1">POST</span><span class="s2">)</span>
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">request</span><span class="s2">.</span><span class="s1">method </span><span class="s2">== </span><span class="s3">&quot;POST&quot;</span><span class="s2">):</span>
+
+        <span class="s1">print</span><span class="s2">(</span><span class="s3">'inside post'</span><span class="s2">)</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">form</span><span class="s2">.</span><span class="s1">is_valid</span><span class="s2">()):</span>
+            <span class="s1">form</span><span class="s2">.</span><span class="s1">save</span><span class="s2">()</span>
+            <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/loginsuccess.html'</span><span class="s2">)</span>
+    <span class="s4"># else:</span>
+    <span class="s4">#     form = UserRegForm()</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/signup.html'</span><span class="s2">, {</span><span class="s3">'form'</span><span class="s2">: </span><span class="s1">form</span><span class="s2">})</span>
+
+
+<span class="s0">def </span><span class="s1">eligibility</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/eligibility.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">faqs</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/faqs.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">instructions</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/instructions.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">payment</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/payment.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">apply</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/apply.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">regular</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/regular.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">r2</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/r2.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">r3</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/r3.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">r4</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/r4.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">r5</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/r5.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">r6</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/r6.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">r7</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/r7.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">i1</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/i1.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">visa_check</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">if </span><span class="s1">request</span><span class="s2">.</span><span class="s1">method </span><span class="s2">== </span><span class="s3">'POST'</span><span class="s2">:</span>
+        <span class="s4"># Handle form submission if needed</span>
+        <span class="s0">pass</span>
+    <span class="s0">else</span><span class="s2">:</span>
+        <span class="s4"># Assuming VisaApplication is the model for visa applications</span>
+        <span class="s1">visa_applications </span><span class="s2">= </span><span class="s1">VisaApplication</span><span class="s2">.</span><span class="s1">objects</span><span class="s2">.</span><span class="s1">all</span><span class="s2">()</span>
+        <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/visa_check.html'</span><span class="s2">, {</span><span class="s3">'visa_applications'</span><span class="s2">: </span><span class="s1">visa_applications</span><span class="s2">})</span>
+
+
+<span class="s0">def </span><span class="s1">admin_login</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">if </span><span class="s1">request</span><span class="s2">.</span><span class="s1">method </span><span class="s2">== </span><span class="s3">'POST'</span><span class="s2">:</span>
+        <span class="s1">username </span><span class="s2">= </span><span class="s1">request</span><span class="s2">.</span><span class="s1">POST</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">'username'</span><span class="s2">)</span>
+        <span class="s1">password </span><span class="s2">= </span><span class="s1">request</span><span class="s2">.</span><span class="s1">POST</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">'password'</span><span class="s2">)</span>
+        <span class="s1">user </span><span class="s2">= </span><span class="s1">authenticate</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s1">username</span><span class="s2">=</span><span class="s1">username</span><span class="s2">, </span><span class="s1">password</span><span class="s2">=</span><span class="s1">password</span><span class="s2">)</span>
+        <span class="s0">if </span><span class="s1">user </span><span class="s0">is not None and </span><span class="s1">user</span><span class="s2">.</span><span class="s1">is_staff</span><span class="s2">:</span>
+            <span class="s1">login</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s1">user</span><span class="s2">)</span>
+            <span class="s0">return </span><span class="s1">redirect</span><span class="s2">(</span><span class="s3">'admin:index'</span><span class="s2">)</span>
+        <span class="s0">else</span><span class="s2">:</span>
+            <span class="s1">context </span><span class="s2">= {</span><span class="s3">'message'</span><span class="s2">: </span><span class="s3">'Invalid Credentials'</span><span class="s2">}</span>
+            <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/admin_login.html'</span><span class="s2">, </span><span class="s1">context</span><span class="s2">)</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/admin_login.html'</span><span class="s2">)</span>
+
+
+<span class="s0">def </span><span class="s1">visa_applications</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s1">visa_applications </span><span class="s2">= </span><span class="s1">VisaApplication</span><span class="s2">.</span><span class="s1">objects</span><span class="s2">.</span><span class="s1">all</span><span class="s2">()</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/visa_applications.html'</span><span class="s2">, {</span><span class="s3">'visa_applications'</span><span class="s2">: </span><span class="s1">visa_applications</span><span class="s2">})</span>
+
+
+<span class="s0">def </span><span class="s1">process_application</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s1">application_id</span><span class="s2">):</span>
+    <span class="s1">application </span><span class="s2">= </span><span class="s1">VisaApplication</span><span class="s2">.</span><span class="s1">objects</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">pk</span><span class="s2">=</span><span class="s1">application_id</span><span class="s2">)</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/process_application.html'</span><span class="s2">, {</span><span class="s3">'application'</span><span class="s2">: </span><span class="s1">application</span><span class="s2">})</span>
+
+
+<span class="s0">def </span><span class="s1">apply_for_visa</span><span class="s2">(</span><span class="s1">request</span><span class="s2">):</span>
+    <span class="s0">if </span><span class="s1">request</span><span class="s2">.</span><span class="s1">method </span><span class="s2">== </span><span class="s3">'POST'</span><span class="s2">:</span>
+        <span class="s1">form </span><span class="s2">= </span><span class="s1">VisaApplicationForm</span><span class="s2">(</span><span class="s1">request</span><span class="s2">.</span><span class="s1">POST</span><span class="s2">)</span>
+        <span class="s0">if </span><span class="s1">form</span><span class="s2">.</span><span class="s1">is_valid</span><span class="s2">():</span>
+            <span class="s1">form</span><span class="s2">.</span><span class="s1">save</span><span class="s2">()</span>
+            <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/application_success.html'</span><span class="s2">)</span>
+    <span class="s0">else</span><span class="s2">:</span>
+        <span class="s1">form </span><span class="s2">= </span><span class="s1">VisaApplicationForm</span><span class="s2">()</span>
+    <span class="s0">return </span><span class="s1">render</span><span class="s2">(</span><span class="s1">request</span><span class="s2">, </span><span class="s3">'visa/apply.html'</span><span class="s2">, {</span><span class="s3">'form'</span><span class="s2">: </span><span class="s1">form</span><span class="s2">})</span>
+</pre>
+</body>
+</html>

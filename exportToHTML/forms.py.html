@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>forms.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+forms.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">django </span><span class="s0">import </span><span class="s1">forms</span>
+<span class="s0">from </span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">Userregistration</span>
+<span class="s0">from </span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">VisaApplication</span>
+
+<span class="s0">class </span><span class="s1">UserregistrationForm</span><span class="s2">(</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">ModelForm</span><span class="s2">):</span>
+    <span class="s1">password </span><span class="s2">= </span><span class="s1">forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget</span><span class="s2">=</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">PasswordInput</span><span class="s2">)</span>
+    <span class="s1">repassword </span><span class="s2">= </span><span class="s1">forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget</span><span class="s2">=</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">PasswordInput</span><span class="s2">)</span>
+
+    <span class="s0">class </span><span class="s1">Meta</span><span class="s2">:</span>
+        <span class="s1">model </span><span class="s2">= </span><span class="s1">Userregistration</span>
+        <span class="s1">fields </span><span class="s2">= </span><span class="s3">&quot;__all__&quot;</span>
+        <span class="s1">exclude </span><span class="s2">= [</span><span class="s3">&quot;id&quot;</span><span class="s2">]</span>
+
+<span class="s4"># forms.py</span>
+
+<span class="s0">class </span><span class="s1">VisaApplicationForm</span><span class="s2">(</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">ModelForm</span><span class="s2">):</span>
+    <span class="s0">class </span><span class="s1">Meta</span><span class="s2">:</span>
+        <span class="s1">model </span><span class="s2">= </span><span class="s1">VisaApplication</span>
+        <span class="s1">fields </span><span class="s2">= [</span><span class="s3">'passport_number'</span><span class="s2">, </span><span class="s3">'country_of_origin'</span><span class="s2">, </span><span class="s3">'purpose_of_visit'</span><span class="s2">]</span>
+
+</pre>
+</body>
+</html>

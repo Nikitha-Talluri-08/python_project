@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>admin_login.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #d5b778;}
+.s3 { color: #bababa;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+admin_login.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!-- admin_login.html --&gt;</span>
+<span class="s2">&lt;!DOCTYPE </span><span class="s3">html</span><span class="s2">&gt;</span>
+<span class="s2">&lt;html </span><span class="s3">lang</span><span class="s4">=&quot;en&quot;</span><span class="s2">&gt;</span>
+<span class="s2">&lt;head&gt;</span>
+    <span class="s2">&lt;meta </span><span class="s3">charset</span><span class="s4">=&quot;UTF-8&quot;</span><span class="s2">&gt;</span>
+    <span class="s2">&lt;meta </span><span class="s3">name</span><span class="s4">=&quot;viewport&quot; </span><span class="s3">content</span><span class="s4">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s2">&gt;</span>
+    <span class="s2">&lt;title&gt;</span><span class="s1">Admin Login</span><span class="s2">&lt;/title&gt;</span>
+<span class="s2">&lt;/head&gt;</span>
+<span class="s2">&lt;body&gt;</span>
+    <span class="s2">&lt;h1&gt;</span><span class="s1">Admin Login</span><span class="s2">&lt;/h1&gt;</span>
+    <span class="s2">&lt;form </span><span class="s3">method</span><span class="s4">=&quot;post&quot;</span><span class="s2">&gt;</span>
+        <span class="s1">{% csrf_token %}</span>
+        <span class="s2">&lt;div&gt;</span>
+            <span class="s2">&lt;label </span><span class="s3">for</span><span class="s4">=&quot;username&quot;</span><span class="s2">&gt;</span><span class="s1">Username:</span><span class="s2">&lt;/label&gt;</span>
+            <span class="s2">&lt;input </span><span class="s3">type</span><span class="s4">=&quot;text&quot; </span><span class="s3">id</span><span class="s4">=&quot;username&quot; </span><span class="s3">name</span><span class="s4">=&quot;username&quot;</span><span class="s2">&gt;</span>
+        <span class="s2">&lt;/div&gt;</span>
+        <span class="s2">&lt;div&gt;</span>
+            <span class="s2">&lt;label </span><span class="s3">for</span><span class="s4">=&quot;password&quot;</span><span class="s2">&gt;</span><span class="s1">Password:</span><span class="s2">&lt;/label&gt;</span>
+            <span class="s2">&lt;input </span><span class="s3">type</span><span class="s4">=&quot;password&quot; </span><span class="s3">id</span><span class="s4">=&quot;password&quot; </span><span class="s3">name</span><span class="s4">=&quot;password&quot;</span><span class="s2">&gt;</span>
+        <span class="s2">&lt;/div&gt;</span>
+        <span class="s2">&lt;button </span><span class="s3">type</span><span class="s4">=&quot;submit&quot;</span><span class="s2">&gt;</span><span class="s1">Login</span><span class="s2">&lt;/button&gt;</span>
+    <span class="s2">&lt;/form&gt;</span>
+    <span class="s1">{% if messages %}</span>
+        <span class="s2">&lt;ul&gt;</span>
+            <span class="s1">{% for message in messages %}</span>
+                <span class="s2">&lt;li&gt;</span><span class="s1">{{ message }}</span><span class="s2">&lt;/li&gt;</span>
+            <span class="s1">{% endfor %}</span>
+        <span class="s2">&lt;/ul&gt;</span>
+    <span class="s1">{% endif %}</span>
+<span class="s2">&lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span>
+</pre>
+</body>
+</html>

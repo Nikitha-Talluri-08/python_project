@@ -1,0 +1,49 @@
+{% extends "visa/home.html" %}
+
+{% block title %}
+  e-Visa Application
+{% endblock title %}
+
+{% block content %}
+
+  <div class="container">
+    <form method="POST">
+      {% csrf_token %}
+
+<div class="container_2">
+
+<h3>SAARC Country Visit Details</h3>
+
+<label for="visitedSAARCCountries">Have you visited SAARC countries (except your own country) during the last 3 years? *</label>
+<input type="radio" id="visitedSAARCCountriesYes" name="visitedSAARCCountries" value="yes"> Yes
+<input type="radio" id="visitedSAARCCountriesNo" name="visitedSAARCCountries" value="no"> No<br><br>
+
+<label for="referenceNameIndia">Reference Name in India *</label>
+<input type="text" id="referenceNameIndia" name="referenceNameIndia"><br><br>
+
+<label for="referenceAddressIndia">Address *</label>
+<input type="text" id="referenceAddressIndia" name="referenceAddressIndia"><br><br>
+
+<label for="referencePhoneIndia">Phone *</label>
+<input type="text" id="referencePhoneIndia" name="referencePhoneIndia"><br><br>
+
+<label for="referenceNameAlbania">Reference Name in ALBANIA *</label>
+<input type="text" id="referenceNameAlbania" name="referenceNameAlbania"><br><br>
+
+<label for="referenceAddressAlbania">Address</label>
+<input type="text" id="referenceAddressAlbania" name="referenceAddressAlbania"><br><br>
+
+<label for="referencePhoneAlbania">Phone *</label>
+<input type="text" id="referencePhoneAlbania" name="referencePhoneAlbania"><br><br>
+</div><br><br><br>
+
+    </form>
+  </div><br>
+<br><br>
+<div class="container_4"><br>
+<div class="navbar-links">
+            <a href="r7">Next Page</a>
+</div><br><br>
+    </div><br><br><br>
+
+{% endblock content %}
